@@ -160,11 +160,50 @@ const quranAudios = [
         artist: "Sanauallah Ishaq Frimpong"
     },
     */
+    {
+        title: "(085)_Al-Buruuj",
+        duration: "00:00",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/085__Al-Buruuj_otpvve.mp3",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(086)_Aṭ-Ṭariq",
+        duration: "00:00",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/086__At-Taariq_xmqi7t.mp3",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(087)_Al-A'laa",
+        duration: "00:00",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/087__Al-A_laa_cp54d1.mp3",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(088)_Al-Ghaashiyah",
+        duration: "00:00",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/088__Al-Ghaashiyah_racmrd.mp3",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(089)_Al-Fajr",
+        duration: "00:00",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/089__Al-Fajr_yijkob.mp3",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
 
     {
         title: "(090)_Al-Balad",
         duration: "00:00",
-        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/090__Al-Balad_bakn9w.mp3",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/090__Al-Balad_bakn9w.mp3",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
@@ -172,7 +211,7 @@ const quranAudios = [
     {
         title: "(091)_Ash-Shams",
         duration: "00:00",
-        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/091__Ash-Shams_bgi076.mp3",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/091__Ash-Shams_bgi076.mp3",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
@@ -180,7 +219,7 @@ const quranAudios = [
     {
         title: "(092)_Al-Lail",
         duration: "00:00",
-        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/092__Al-Lail_pkezml.mp3",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/092__Al-Lail_pkezml.mp3",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
@@ -188,7 +227,7 @@ const quranAudios = [
     {
         title: "(093)_Ad-Duhaa",
         duration: "00:00",
-        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/093__Ad-Duhaa_s7wuwe.mp3",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/093__Ad-Duhaa_s7wuwe.mp3",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
@@ -196,7 +235,7 @@ const quranAudios = [
     {
         title: "(094)_Ash-Sharh",
         duration: "00:00",
-        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/094__Ash-Shrah_ojucdo.mp3",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/094__Ash-Shrah_ojucdo.mp3",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
@@ -204,7 +243,7 @@ const quranAudios = [
     {
         title: "(095)_Al-Teen",
         duration: "00:00",
-        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/095__At-Teen_fvqlqe.mp3",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/095__At-Teen_fvqlqe.mp3",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
@@ -212,7 +251,7 @@ const quranAudios = [
     {
         title: "(096)_Al-'Alaq",
         duration: "00:00",
-        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/096__Al-Alaq_kjcfuu.mp3",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/096__Al-Alaq_kjcfuu.mp3",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
@@ -220,7 +259,7 @@ const quranAudios = [
     {
         title: "(097)_Al-Qadr",
         duration: "00:00",
-        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/097__Al-Qadar_eha5ud.mp3",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/097__Al-Qadar_eha5ud.mp3",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
@@ -228,7 +267,7 @@ const quranAudios = [
     {
         title: "(098)_Al-Bayyinah",
         duration: "00:00",
-        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/098__Al-Bayyinah_y9xmy2.mp3",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/098__Al-Bayyinah_y9xmy2.mp3",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
@@ -236,7 +275,7 @@ const quranAudios = [
     {
         title: "(099)_Az-Zalzalah",
         duration: "00:00",
-        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/099__Az-Zalzalah_q38g3p.mp3",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/099__Az-Zalzalah_q38g3p.mp3",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
