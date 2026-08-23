@@ -71,7 +71,7 @@
 .artwork {
         background: rgb(206, 199, 199);
         margin: 0;
-        display: none;
+    display: block;
         padding: 10px;
 }
 
