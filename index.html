@@ -22,8 +22,12 @@
     <link rel="stylesheet" 
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
+    <!-- Cloudinary Video Player CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/cloudinary-video-player@4.0.2/dist/cld-video-player.min.css">
+
     <style>
-        /* ======== Header and top navigation ======= */
+        /* ======== Header and top navigation ====== */
         nav {
             position: fixed;
             top: 0;
@@ -211,31 +215,52 @@
             background: #071b0d;
         }
 
+/* ===== Cloudinary Video Player in Carousel ===== */
+
 .cloudinary-carousel-player-container {
     width: 100%;
-    height: auto;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #071b0d;
+    overflow: hidden;
+}
+
+/* Cloudinary player */
+.cloudinary-carousel-player-container .cld-video-player,
+.cloudinary-carousel-player-container .video-js {
+    width: 100% !important;
+    height: 400px !important;
+    max-width: 100%;
     display: block;
+}
+
+/* Actual video */
+.cloudinary-carousel-player-container video {
+    width: 100% !important;
+    height: 400px !important;
+    object-fit: contain;
     background: #071b0d;
 }
 
-.cloudinary-carousel-player-container iframe {
-    width: 100%;
-    height: 205px;
-    display: block;
-    border: 0;
-}
-
+/* Mobile */
 @media (max-width: 768px) {
+
     .cloudinary-carousel-player-container {
-        height: 400px;
-        min-height: auto;
+        height: auto;
+        min-height: 220px;
+        aspect-ratio: 16 / 9;
     }
 
-    .cloudinary-carousel-player-container iframe {
-        min-height: auto;
+    .cloudinary-carousel-player-container .cld-video-player,
+    .cloudinary-carousel-player-container .video-js,
+    .cloudinary-carousel-player-container video {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 220px;
     }
 }
-
         /* ======== Professional carousel/card divider ======== */
         .carousel-divider img {
             width: 100%;
@@ -245,12 +270,13 @@
             margin: 6px auto;
         }
 
-        @media (max-width: 768px) {
-            .carousel-video {
-                height: auto;
-                max-height: 400px;
-            }
-        }
+@media (max-width: 768px) {
+    .carousel-video {
+        height: auto;
+        max-height: 400px;
+        min-height: 220px;
+    }
+}
 
         /* Custom card styling */
         .card {
@@ -278,7 +304,7 @@
 
             .brandLogo img {
                 width: 36px;
-                height: auto;
+                height: 28px;
             }
 
             .sidenav-trigger {
@@ -303,7 +329,7 @@
                     <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/bia-logo_hcdlmj.png" 
                          alt="Logo"
                          width="50"
-                         height="50">
+                         height="50" loading="lazy" decoding="async">
                     <b id="first">Breman Islamic</b><b id="second">Academy</b>
                 </a>
             </div>
@@ -364,25 +390,25 @@
             <!-- Welcome slide -->
             <a class="carousel-item">
                 <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/welcome-message_lgivhp.webp"
-                    alt="Welcome message">
+                    alt="Welcome message" loading="lazy" decoding="async">
             </a>
 
             <!-- Admission slide -->
                 <a class="carousel-item">
                     <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/admission-open_v8icqq.webp"
-                        alt="2026/2027 Admission Open">
+                        alt="2026/2027 Admission Open" loading="lazy" decoding="async">
                 </a>
 
-            <!-- Education vs School video slide -->
-           <!-- <a class="carousel-item" id="education-video-slide">
+            <!-- Education vs School video slide (lazy-loaded only when active) -->
+            <a class="carousel-item" id="education-video-slide">
                 <div class="cloudinary-carousel-player-container"></div>
-            </a> -->
+            </a>
         </section>
 
         <!-- Professional branded divider -->
         <div class="carousel-divider" aria-hidden="true">
             <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/carousel-divider_srjymn.webp" 
-            alt="Professional branded divider">
+            alt="Professional branded divider" loading="lazy" decoding="async">
         </div>
 
         <br>
@@ -468,7 +494,7 @@
             <div class="row">
                 <!-- School Information Section -->
                 <div class="col s12 m3 l3 school-info center">
-                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/v1783142529/favicon_hajuj4.png" alt="b.i.a Logo" style="margin-bottom: 0;">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/v1783142529/favicon_hajuj4.png" alt="b.i.a Logo" style="margin-bottom: 0;" loading="lazy" decoding="async">
                     <h6 class="white-text font-bold" id="school-info" style="margin-top: 0;">Breman Islamic Academy</h6>
                     <p class="grey-text text-lighten-3" id="sub-school-info">
                         Sovereignty Belongs to Allah.
@@ -550,8 +576,8 @@
                     <h6 class="white-text font-semibold">Background Music</h6>
                     <hr style="border: none; border-top: 5px solid #fcfdfb; width: 100px;">
                     <div class="audio-container">
-                        <audio controls id="audio" loop>
-                            <source src="https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777918968/m.background-music_ey910c.aac" type="audio/mpeg">
+                        <audio controls id="audio" loop preload="none">
+                            <source src="https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777918968/m.background-music_ey910c.aac" type="audio/aac">
                         </audio>
                     </div>
                 </div>
@@ -581,6 +607,11 @@
     <!-- Materialize JavaScript -->
     <script 
     src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Cloudinary Video Player JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/cloudinary-video-player@4.0.2/dist/cld-video-player.min.js">
+    </script>
 
     <!-- Custom JavaScript -->
     <script src="js/main.js"></script>
@@ -631,46 +662,88 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const carouselElems = document.querySelectorAll('.carousel');
 
-    function loadCloudinaryVideo() {
+    let educationPlayer = null;
 
-        const container = document.querySelector(
-            '#education-video-slide .cloudinary-carousel-player-container'
-        );
 
-        if (!container) return;
+    // ==============================
+    // CREATE CLOUDINARY VIDEO PLAYER
+    // ==============================
 
-        // Prevent creating multiple players
-        if (container.querySelector('iframe')) return;
+async function createEducationPlayer() {
 
-        const iframe = document.createElement('iframe');
+    const container = document.querySelector(
+        '#education-video-slide .cloudinary-carousel-player-container'
+    );
 
-        iframe.src =
-            'https://player.cloudinary.com/embed/' +
-            '?cloud_name=rahmatrust-m-s' +
-            '&public_id=Education_vs_School_cgbodb';
+    if (!container) return;
 
-        iframe.allow =
-            'autoplay; fullscreen; encrypted-media; picture-in-picture';
+    if (educationPlayer) return;
 
-        iframe.allowFullscreen = true;
+    const video = document.createElement('video');
 
-        iframe.title = 'Education vs School';
+    video.id = 'education-video';
+    video.className = 'cld-video-player';
+    video.setAttribute('playsinline', '');
+    video.setAttribute('controls', '');
+    video.setAttribute('preload', 'none');
 
-        container.appendChild(iframe);
+    container.appendChild(video);
+
+    educationPlayer = await cloudinary.player('education-video', {
+        cloudName: 'rahmatrust-m-s',
+        controls: true,
+        autoplay: false,
+        loop: true,
+        fluid: true,
+        title: 'Education vs School',
+        colors: {
+            base: '#D31010',
+            accent: '#33D644'
+        }
+    });
+
+    educationPlayer.source({
+        publicId: 'Education_vs_School_cgbodb',
+        sourceTypes: ['mp4']
+    });
+}
+
+
+    // ==============================
+    // PLAY VIDEO
+    // ==============================
+
+    function playEducationVideo() {
+
+        if (!educationPlayer) return;
+
+        try {
+            educationPlayer.play();
+        } catch (error) {
+            console.log('Video play waiting:', error);
+        }
     }
 
 
-    function removeCloudinaryVideo() {
+    // ==============================
+    // PAUSE VIDEO
+    // ==============================
 
-        const container = document.querySelector(
-            '#education-video-slide .cloudinary-carousel-player-container'
-        );
+    function pauseEducationVideo() {
 
-        if (!container) return;
+        if (!educationPlayer) return;
 
-        container.innerHTML = '';
+        try {
+            educationPlayer.pause();
+        } catch (error) {
+            console.log('Video pause:', error);
+        }
     }
 
+
+    // ==============================
+    // INITIALIZE CAROUSEL
+    // ==============================
 
     const carouselInstances = M.Carousel.init(carouselElems, {
 
@@ -682,14 +755,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
         onCycleTo: function (element) {
 
-            // Check whether the active slide is the video slide
+            // ==========================
+            // VIDEO SLIDE
+            // ==========================
+
             if (element.id === 'education-video-slide') {
 
-                loadCloudinaryVideo();
+                createEducationPlayer();
 
-            } else {
+                // Do not autoplay. Loading starts only when the visitor
+                // reaches this slide and chooses to play the video.
 
-                removeCloudinaryVideo();
+            }
+
+
+            // ==========================
+            // IMAGE SLIDES
+            // ==========================
+
+            else {
+
+                pauseEducationVideo();
 
             }
 
@@ -698,20 +784,78 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    // Automatically move to the next slide every 10 seconds
+// ==============================
+// AUTOMATIC SLIDE CHANGE
+// ==============================
 
-    carouselInstances.forEach(function (carousel) {
+carouselInstances.forEach(function (carousel) {
 
-        setInterval(function () {
+    let carouselTimer = null;
+
+    function startCarouselTimer() {
+
+        clearTimeout(carouselTimer);
+
+        const activeSlide =
+            carousel.el.querySelector('.carousel-item.active');
+
+        // If video slide is active, let the video control the timing
+        if (activeSlide && activeSlide.id === 'education-video-slide') {
+            return;
+        }
+
+        // Image slides stay for 10 seconds
+        carouselTimer = setTimeout(function () {
 
             carousel.next();
 
         }, 10000);
+    }
+
+
+    // Start timer initially
+    startCarouselTimer();
+
+
+    // Watch slide changes
+    carousel.el.addEventListener('click', function () {
+        setTimeout(startCarouselTimer, 100);
+    });
+
+
+    // Also restart timer whenever carousel changes
+    const originalOnCycleTo = carousel.options?.onCycleTo;
+
+});
+
+
+    // ==============================
+    // MANUAL TOUCH / MOUSE CONTROL
+    // ==============================
+
+    carouselElems.forEach(function (carousel) {
+
+        carousel.addEventListener(
+            'touchstart',
+            function () {
+                pauseEducationVideo();
+            },
+            { passive: true }
+        );
+
+        carousel.addEventListener(
+            'mousedown',
+            function () {
+                pauseEducationVideo();
+            }
+        );
 
     });
 
 
-    // Enhanced hover effects for cards
+    // ==============================
+    // CARD HOVER EFFECTS
+    // ==============================
 
     document.querySelectorAll('.card').forEach(function (card) {
 
