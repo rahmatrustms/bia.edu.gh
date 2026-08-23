@@ -11,8 +11,8 @@
     <!-- Customized CSS -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/mediaLibrary.css">
-    <!-- Custom helpers -->
     <link rel="stylesheet" type="text/css" href="css/helpers.css">
+    <link rel="stylesheet" type="text/css" href="css/media-query.css">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" 
@@ -42,6 +42,8 @@
             line-height: 30px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             flex-wrap: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .brandLogo {
@@ -60,6 +62,7 @@
             font-weight: 700;
             white-space: nowrap;
             min-width: 0;
+            text-overflow: ellipsis;
         }
 
         .brandLogo img {
@@ -69,8 +72,8 @@
         }
 
         .spacer {
-            flex: 1 1 auto;
-            min-width: 12px;
+            flex: .1 .1 auto;
+            min-width: 10px;
         }
 
         .nav-links {
@@ -80,10 +83,16 @@
 
         .nav-links ul {
             display: flex;
-            gap: 8px;
+            gap: 2px;
             margin: 0;
             padding: 0;
             list-style: none;
+        }
+        
+        .nav-links ul li a {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .nav-links a:hover {
@@ -329,7 +338,7 @@
                     <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/bia-logo_hcdlmj.png" 
                          alt="Logo"
                          width="50"
-                         height="50" loading="lazy" decoding="async">
+                         height="50">
                     <b id="first">Breman Islamic</b><b id="second">Academy</b>
                 </a>
             </div>
@@ -338,33 +347,30 @@
   
             <!----------- Desktop nav --------->
             <div class="nav-links">
-                <ul>
+                <ul class="truncate">
                     <li><a href="index.html"
-                           id="active"
-                           class="green-text">Home</a>
+                           id="active">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Results</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Exams</a>
                     </li>
 
                     <li>
                         <a href="#"
-                           class="green-text">Results</a>
-                    </li>
-
-                    <li>
-                        <a href="#"
-                           class="green-text">Exams</a>
-                    </li>
-
-                    <li>
-                        <a href="#"
-                           class="green-text">Gallery</a>
+                           class="truncate">Gallery</a>
                     </li>
 
                     <li><a href="pages/audios.html" 
-                           class="green-text">Media Library</a>
+                           class="truncate">Media Library</a>
                     </li>
 
                     <li><a href="#"
-                           class="green-text">Apply Online</a>
+                           class="truncate">Apply Online</a>
                     </li>
                 </ul>
             </div>
@@ -390,25 +396,25 @@
             <!-- Welcome slide -->
             <a class="carousel-item">
                 <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/welcome-message_lgivhp.webp"
-                    alt="Welcome message" loading="lazy" decoding="async">
+                    alt="Welcome message">
             </a>
 
             <!-- Admission slide -->
                 <a class="carousel-item">
                     <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/admission-open_v8icqq.webp"
-                        alt="2026/2027 Admission Open" loading="lazy" decoding="async">
+                        alt="2026/2027 Admission Open">
                 </a>
 
-            <!-- Education vs School video slide (lazy-loaded only when active) -->
-            <a class="carousel-item" id="education-video-slide">
+            <!-- Education vs School video slide -->
+            <!--<a class="carousel-item" id="education-video-slide">
                 <div class="cloudinary-carousel-player-container"></div>
-            </a>
+            </a>-->
         </section>
 
         <!-- Professional branded divider -->
         <div class="carousel-divider" aria-hidden="true">
             <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/carousel-divider_srjymn.webp" 
-            alt="Professional branded divider" loading="lazy" decoding="async">
+            alt="Professional branded divider">
         </div>
 
         <br>
@@ -489,12 +495,12 @@
         </aside>
     </main>
 
-    <footer class="page-footer green">
+    <footer class="page-footer" style="background: rgba(4, 102, 15, 0.886)">
         <div class="footer-content">
             <div class="row">
                 <!-- School Information Section -->
                 <div class="col s12 m3 l3 school-info center">
-                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/v1783142529/favicon_hajuj4.png" alt="b.i.a Logo" style="margin-bottom: 0;" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/v1783142529/favicon_hajuj4.png" alt="b.i.a Logo" style="margin-bottom: 0;">
                     <h6 class="white-text font-bold" id="school-info" style="margin-top: 0;">Breman Islamic Academy</h6>
                     <p class="grey-text text-lighten-3" id="sub-school-info">
                         Sovereignty Belongs to Allah.
@@ -527,7 +533,7 @@
                 </div>
 
                 <!-- Services Section -->
-                <div class="col s12 m4 l2">
+                <div class="col s12 m4 l2" id="services">
                     <h6 class="white-text font-semibold">Services</h6>
                     <hr style="border: none; border-top: 5px solid #fcfdfb; width: 50px;">
                     <ul>
@@ -543,7 +549,7 @@
                 </div>
 
                 <!-- Contact Us Information Section -->
-                <div class="col s12 m6 l3 contact-info">
+                <div class="col s12 m6 l3 contact-info" id="contact">
                     <h6 class="white-text font-semibold">Contact Us</h6>
                     <hr style="border: none; border-top: 5px solid #fcfdfb; width: 70px;">
                     <p class="grey-text text-lighten-3">
@@ -572,12 +578,12 @@
                 </div>
 
                 <!-- Audio Player Section -->
-                <div class="col s12 m3 l2 left-align">
+                <div class="col s12 m3 l2 left-align" id="background-music">
                     <h6 class="white-text font-semibold">Background Music</h6>
                     <hr style="border: none; border-top: 5px solid #fcfdfb; width: 100px;">
                     <div class="audio-container">
-                        <audio controls id="audio" loop preload="none">
-                            <source src="https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777918968/m.background-music_ey910c.aac" type="audio/aac">
+                        <audio controls id="audio" loop>
+                            <source src="https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777918968/m.background-music_ey910c.aac" type="audio/mpeg">
                         </audio>
                     </div>
                 </div>
@@ -685,7 +691,6 @@ async function createEducationPlayer() {
     video.className = 'cld-video-player';
     video.setAttribute('playsinline', '');
     video.setAttribute('controls', '');
-    video.setAttribute('preload', 'none');
 
     container.appendChild(video);
 
@@ -702,10 +707,7 @@ async function createEducationPlayer() {
         }
     });
 
-    educationPlayer.source({
-        publicId: 'Education_vs_School_cgbodb',
-        sourceTypes: ['mp4']
-    });
+    educationPlayer.source('Education_vs_School_cgbodb');
 }
 
 
@@ -763,8 +765,12 @@ async function createEducationPlayer() {
 
                 createEducationPlayer();
 
-                // Do not autoplay. Loading starts only when the visitor
-                // reaches this slide and chooses to play the video.
+                // Give Cloudinary a moment to initialize
+                setTimeout(function () {
+
+                    playEducationVideo();
+
+                }, 1000);
 
             }
 

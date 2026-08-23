@@ -1,0 +1,80 @@
+@media (max-width: 768px) {
+    .hide-on-med-and-down {
+        display: none !important;
+    }
+
+    .sidenav-trigger {
+        display: block !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .sidenav-trigger {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .audio-sidenav-close {
+        display: block;
+    }
+}
+
+/* ===== Footer Responsiveness on small screens ===== */
+@media (min-width: 600px) and (max-width: 657px) {
+    #services {
+        padding-left: 13.5%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: auto;
+    }
+
+    #contact {
+        width: 50% !important;
+        padding-left: auto !important;
+    }
+
+    #background-music {
+        width: auto !important;
+        padding-left: 0 !important;
+    } audio {
+        width: 70% !important;
+    }
+}
+
+@media (min-width: 657px) and (max-width: 990px) {
+    #services {
+        padding-left: 16%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: auto;
+    }
+
+    #contact {
+        width: 50% !important;
+        padding-left: auto !important;
+    }
+
+    #background-music {
+        width: auto !important;
+        padding-left: 0 !important;
+    } audio {
+        width: 50% !important;
+    }
+}
+
+@media screen and (min-width: 690px) {
+    #copyright {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    #developer {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding-left: 10%;
+    }
+}
+/* =============================================== */

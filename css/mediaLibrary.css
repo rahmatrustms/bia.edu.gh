@@ -21,6 +21,7 @@
 #second {
     color: #800020;
     margin: 0;
+    text-overflow: ellipsis;
 }
 
 .brandLogo a:hover {

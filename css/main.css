@@ -29,22 +29,6 @@
             display: none;
         }
 
-        @media (max-width: 768px) {
-            .hide-on-med-and-down {
-                display: none !important;
-            }
-
-            .sidenav-trigger {
-                display: block !important;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .sidenav-trigger {
-                display: none !important;
-            }
-        }
-
         #navImg   {
             margin: 5px 0;
             width: 150px;
@@ -105,20 +89,14 @@
             color: #ffffff !important;
         }
 
-        @media (max-width: 768px) {
-            .audio-sidenav-close {
-                display: block;
-            }
-        }
-
         /* =================Floating scroll-to-top button=============== */
         .scroll-to-top {
             position: fixed;
             bottom: 80px;
-            right: 20px;
+            right: 5px;
             width: 30px;
             height: 30px;
-            background: linear-gradient(45deg, #4CAF50, #45a049);
+            background: rgb(4, 102, 15);
             color: white;
             border: none;
             border-radius: 50%;
@@ -146,10 +124,10 @@
         .scroll-to-down {
             position: fixed;
             top: 60px;
-            right: 5px;
+            right: 3px;
             width: 30px;
             height: 30px;
-            background: linear-gradient(45deg, #4CAF50, #45a049);
+            background: rgb(4, 102, 15);
             color: white;
             border: none;
             border-radius: 50%;
@@ -167,7 +145,7 @@
         }
 
         .scroll-to-down:hover {
-            background: linear-gradient(45deg, #45a049, #4CAF50);
+            background: linear-gradient(45deg, #4CAF50, #45a049);
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(0,0,0,0.4);
         }
@@ -243,7 +221,7 @@
             text-align: center; }
 
 /* =========== Footer Styling ========= */
-        footer.page-footer .footer-content {
+        footer, .page-footer, .footer-content {
             padding: 0 5px;
         }
         footer.page-footer {
@@ -324,10 +302,5 @@
 
         footer.page-footer .footer-copyright .container {
             padding: 0;
-        }
-
-        @media screen and (min-width:993.60px) {
-            #developer {white-space: nowrap; padding-left: 36%;}
-            audio {width: 60% !important;}
         }
 /* ========== End of Footer Styling ========= */
