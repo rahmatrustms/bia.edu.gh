@@ -1,306 +1,306 @@
-        body {
-            background: url(https://res.cloudinary.com/rahmatrust-m-s/image/upload/v1783142525/background_ylf2e2.jpg);
-            background-position: right;
-            display: flex;
-            margin: 0;
-            flex-direction: column;
-            background-repeat: no-repeat; 
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-        }
+body {
+    background: url(https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/background_ylf2e2.jpg);
+    background-position: right;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
 
 
 /* ================= NAVBAR ================= */
-        nav {
-            background:white;
-            display: flex;
-            align-items: center;
-            gap: 0px;
-            margin: 0;
-            padding: 0 16px;
-            height: 46px;
-            line-height: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            flex-wrap: nowrap;
-        }
-        
-        .sidenav-trigger {
-            display: none;
-        }
+nav {
+    background:white;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    margin: 0;
+    padding: 0 16px;
+    height: 46px;
+    line-height: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    flex-wrap: nowrap;
+}
 
-        #navImg   {
-            margin: 5px 0;
-            width: 150px;
-        }
+.sidenav-trigger {
+    display: none;
+}
 
-        .sidenav li i {
-        display: flex;
-        }
+#navImg   {
+    margin: 5px 0;
+    width: 150px;
+}
 
-        .sidenav-trigger {
-            position: relative;
-            right: 15px;
-            font-size: 1.5em;
-            color: #ecebe6;
-        }
+.sidenav li i {
+display: flex;
+}
 
-         /* Hover effect for nav links */
+.sidenav-trigger {
+    position: relative;
+    right: 15px;
+    font-size: 1.5em;
+    color: #ecebe6;
+}
 
-        /* Align icon spacing */
-        nav ul li a {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+    /* Hover effect for nav links */
+
+/* Align icon spacing */
+nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 /* =================END OF NAVBAR STYLING======================== */
 
-        .sidenav {
-            max-width: 50%;
-            position: fixed;
-            z-index: 1000;
-        }
+.sidenav {
+    max-width: 50%;
+    position: fixed;
+    z-index: 1000;
+}
 
-        .sidenav li a:hover {
-            font-weight: 600;
-            border-left: 5px solid #056313;
-            background: #ecebe6 !important;
-            color: #04500e !important;
-        }
+.sidenav li a:hover {
+    font-weight: 600;
+    border-left: 5px solid #056313;
+    background: #ecebe6 !important;
+    color: #04500e !important;
+}
 
 
 
-        .sidenav li i, .sidenav a {
-            color:  #ecebe6 !important;
-        }
+.sidenav li i, .sidenav a {
+    color:  #ecebe6 !important;
+}
 
-        .audio-sidenav-close {
+.audio-sidenav-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #ecebe6 !important;
+    font-size: 1.2rem;
+    z-index: 1001;
+    display: none;
+    text-decoration: none;
+}
+
+.audio-sidenav-close:hover {
+    color: #ffffff !important;
+}
+
+/* =================Floating scroll-to-top button=============== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background: rgb(4, 102, 15);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background: linear-gradient(45deg, #45a049, #4CAF50);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+/* ===========================END============================ */
+
+/* ===============Floating scroll-to-bottom button=========== */
+.scroll-to-down {
+    position: fixed;
+    top: 60px;
+    right: 3px;
+    width: 30px;
+    height: 30px;
+    background: rgb(4, 102, 15);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 2000;
+}
+
+.scroll-to-down.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-to-down:hover {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.scroll-to-top i, .scroll-to-down i {
+    font-size: 15px;
+}
+/* ==========================END========================== */
+
+#large-nav {
+    position: fixed;
+    top: 5.3em;
+    width: 15%;
+    height: 27em;
+    margin: 0 0 0em 4em;
+    border-radius: 0.8em;
+    padding: 0.5em 0 0 0;}
+.lbtn { width: 100%; border-radius: 0; }
+
+#small-nav {
+    width: 13.5%;
+    height: 35em;
+    padding: 13em 0 0 0;
+    position: fixed;
+    top: 0;
+    z-index: 0.9; }
+.sbtn { width: 100%; border-radius: 0; }
+#large-nav a { color: white; text-align: left; }
+#large-nav i { margin-left: 17%; }
+#large-nav .btn { border: 2px grey solid; }
+.modal { z-index: 1050; width: 70%; border-radius: 1em; }
+.modal-header { color: black; margin-left: 1em; padding: 0.8em 0.8em 0; }
+.modal-content { background: #e0f7fa; }
+.modal-footer { 
+    color: black; }
+#modal1, #modal2 {
+    width: 40%; border-radius: 1em; font-family: Arial Round, serif; }
+
+
+
+.small {
+    position: absolute;
+    top: 12%;
+    width: 75%;
+    left: 19%;
+    text-align: center; }
+
+.medium {
+    position: absolute;
+    top: 48em; /* Adjust this value as necessary */
+    width: 80%; /* Adjust the width as needed */
+    left: 61%; /* Centering */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    text-align: center; }
+
+.large {
+    position: absolute;
+    top: 7em;
+    width: 74%;
+    left: 24%;
+    text-align: center; }
+
+#sideImg  {width: 13%;
             position: absolute;
-            top: 12px;
-            right: 12px;
-            color: #ecebe6 !important;
-            font-size: 1.2rem;
-            z-index: 1001;
-            display: none;
-            text-decoration: none;
-        }
-
-        .audio-sidenav-close:hover {
-            color: #ffffff !important;
-        }
-
-        /* =================Floating scroll-to-top button=============== */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 80px;
-            right: 5px;
-            width: 30px;
-            height: 30px;
-            background: rgb(4, 102, 15);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-
-        .scroll-to-top.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-to-top:hover {
-            background: linear-gradient(45deg, #45a049, #4CAF50);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-        }
-        /* ===========================END============================ */
-
-        /* ===============Floating scroll-to-bottom button=========== */
-        .scroll-to-down {
-            position: fixed;
-            top: 60px;
-            right: 3px;
-            width: 30px;
-            height: 30px;
-            background: rgb(4, 102, 15);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 2000;
-        }
-
-        .scroll-to-down.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-to-down:hover {
-            background: linear-gradient(45deg, #4CAF50, #45a049);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-        }
-
-        .scroll-to-top i, .scroll-to-down i {
-            font-size: 15px;
-        }
-        /* ==========================END========================== */
-
-        #large-nav {
-            position: fixed;
-            top: 5.3em;
-            width: 15%;
-            height: 27em;
-            margin: 0 0 0em 4em;
-            border-radius: 0.8em;
-            padding: 0.5em 0 0 0;}
-        .lbtn { width: 100%; border-radius: 0; }
-
-        #small-nav {
-            width: 13.5%;
-            height: 35em;
-            padding: 13em 0 0 0;
-            position: fixed;
             top: 0;
-            z-index: 0.9; }
-        .sbtn { width: 100%; border-radius: 0; }
-        #large-nav a { color: white; text-align: left; }
-        #large-nav i { margin-left: 17%; }
-        #large-nav .btn { border: 2px grey solid; }
-        .modal { z-index: 1050; width: 70%; border-radius: 1em; }
-        .modal-header { color: black; margin-left: 1em; padding: 0.8em 0.8em 0; }
-        .modal-content { background: #e0f7fa; }
-        .modal-footer { 
-            color: black; }
-        #modal1, #modal2 {
-            width: 40%; border-radius: 1em; font-family: Arial Round, serif; }
-
-
-
-        .small {
-            position: absolute;
-            top: 12%;
-            width: 75%;
-            left: 19%;
-            text-align: center; }
-
-        .medium {
-            position: absolute;
-            top: 48em; /* Adjust this value as necessary */
-            width: 80%; /* Adjust the width as needed */
-            left: 61%; /* Centering */
-            transform: translate(-50%, -50%); /* Adjust for centering */
-            text-align: center; }
-
-        .large {
-            position: absolute;
-            top: 7em;
-            width: 74%;
-            left: 24%;
-            text-align: center; }
-
-        #sideImg  {width: 13%;
-                   position: absolute;
-                   top: 0;
-                   right: 93%}
-        #side  {
-            width: 80%;
-            border-radius: 50%;
-            position: absolute;
-            top: 5.5em;
-            left: 10%;
-            text-align: center; }
+            right: 93%}
+#side  {
+    width: 80%;
+    border-radius: 50%;
+    position: absolute;
+    top: 5.5em;
+    left: 10%;
+    text-align: center; }
 
 /* =========== Footer Styling ========= */
-        footer, .page-footer, .footer-content {
-            padding: 0 5px;
-        }
-        footer.page-footer {
-            position: relative;
-            padding: 0;
-            z-index: 98;
-            border-radius: 1em 1em 0 0 !important;
-        }
+footer, .page-footer, .footer-content {
+    padding: 0 5px;
+}
+footer.page-footer {
+    position: relative;
+    padding: 0;
+    z-index: 98;
+    border-radius: 1em 1em 0 0 !important;
+}
 
-        .contact-info p {
-            display: flex;
-            justify-content: left;
-        }
-        .contact-info i {
-            display: flex;
-            margin-right: 8px;
-            vertical-align: middle;
-        }
+.contact-info p {
+    display: flex;
+    justify-content: left;
+}
+.contact-info i {
+    display: flex;
+    margin-right: 8px;
+    vertical-align: middle;
+}
 
-        .school-info img {
-            margin: 10px 0;
-            width: 30%;
-        }
+.school-info img {
+    margin: 10px 0;
+    width: 30%;
+}
 
-        .social-media-icons {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            gap: 0 10px;
+.social-media-icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0 10px;
 
-        }
-        /* ----Horizontal line styling for footer sections---- */
-        footer hr {
-            border-color: 8px solid rgba(182, 20, 20, 0.2); 
-            margin: 0; 
-            line-height: 0;
-            padding: 0;
-        }
-        /* -----------------------End------------------------- */
-        footer.page-footer ul li a {
-            padding: 0;
- 
-            transition: all 0.2s ease;
-        }
+}
+/* ----Horizontal line styling for footer sections---- */
+footer hr {
+    border-color: 8px solid rgba(182, 20, 20, 0.2); 
+    margin: 0; 
+    line-height: 0;
+    padding: 0;
+}
+/* -----------------------End------------------------- */
+footer.page-footer ul li a {
+    padding: 0;
 
-        footer.page-footer ul li a:hover {
+    transition: all 0.2s ease;
+}
 
-            font-weight: 600;
-            border-left: 5px solid #056313;
-            background: #ecebe6 !important;
-            color: #04500e !important;
-        }
+footer.page-footer ul li a:hover {
 
-        /* Audio player styling */
-        audio {
-            border-radius: 0.8em !important;
-            position: relative;
-            right: 15%;
-            top: 2px;
-            height: 25px !important;
-            width: 25% !important; /* Responsive for smaller screens */
-        }
+    font-weight: 600;
+    border-left: 5px solid #056313;
+    background: #ecebe6 !important;
+    color: #04500e !important;
+}
 
-        /* Audio player container styling */
-        .audio-container {
-            display: flex;
-            justify-content: center;
-            align-items: left;
-            padding: 5px 0;
-        }
+/* Audio player styling */
+audio {
+    border-radius: 0.8em !important;
+    position: relative;
+    right: 15%;
+    top: 2px;
+    height: 25px !important;
+    width: 25% !important; /* Responsive for smaller screens */
+}
 
-        /* Footer copyright styling */
-        footer.page-footer .footer-copyright {
-            background-color: rgba(0, 0, 0, 0.1);
-            padding: 0;
-            margin: 0;
-        }
+/* Audio player container styling */
+.audio-container {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    padding: 5px 0;
+}
 
-        footer.page-footer .footer-copyright .container {
-            padding: 0;
-        }
+/* Footer copyright styling */
+footer.page-footer .footer-copyright {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+}
+
+footer.page-footer .footer-copyright .container {
+    padding: 0;
+}
 /* ========== End of Footer Styling ========= */
