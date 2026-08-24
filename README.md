@@ -29,6 +29,10 @@ The website includes:
 
 Open `index.html` or pages in a browser to run the site locally. No build step is required.
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
 ## Notes
 
 - The audio player uses browser `Audio` and localStorage for persisted state.
