@@ -12,7 +12,9 @@
     <title>B.I.A | Media Library</title>
 
     <!-- Customized CSS -->
+    <!-- Customized CSS -->
     <link rel="stylesheet" type="text/css" href="../css/mediaLibrary.css">
+    <link rel="stylesheet" type="text/css" href="../css/media-query.css">
 
     <!-- Custom helpers -->
     <link rel="stylesheet" type="text/css" href="../css/helpers.css">
@@ -42,16 +44,21 @@
 
         /* ======== Header and top navigation ====== */
         nav {
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
             background:white;
             display: flex;
             align-items: center;
             gap: 0px;
-            margin: 0;
-            padding: 0 16px;
-            height: 45px;
-            line-height: 40px;
+            padding: 0 8px;
+            height: 60px;
+            line-height: 30px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             flex-wrap: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .brandLogo {
@@ -62,14 +69,11 @@
             min-width: 0;
         }
 
-        .brandLogo a {
+        .brandLogo {
             display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #04500e;
-            text-decoration: none;
-            font-weight: 700;
-            white-space: nowrap;
+            align-items: left;
+            flex-shrink: 1;
+            padding: 0;
             min-width: 0;
         }
 
@@ -80,8 +84,8 @@
         }
 
         .spacer {
-            flex: 1 1 auto;
-            min-width: 12px;
+            flex: .1 .1 auto;
+            min-width: 10px;
         }
 
         .nav-links {
@@ -91,14 +95,17 @@
 
         .nav-links ul {
             display: flex;
-            gap: 8px;
+            gap: 2px;
             margin: 0;
             padding: 0;
             list-style: none;
-            white-space: nowrap;
         }
-
-
+        
+        .nav-links ul li a {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
         .nav-links a:hover {
             background: whitesmoke;
@@ -307,12 +314,9 @@
         <nav>
             <!----------- Brand Logo ----------->
             <div class="brandLogo">
-                <a href="media-library.html" target="content">
-                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/bia-logo_hcdlmj.png" 
-                         alt="Logo"
-                         width="50"
-                         height="50">
-                    <b id="first">Breman Islamic</b><b id="second">Academy</b>
+                <a href="audios.html">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/bia-logo_twvwli.png" 
+                        alt="Logo">
                 </a>
             </div>
 
@@ -353,7 +357,7 @@
             </a>
         </nav>
 
-        <section class="subnav" style="margin-top: 0; padding-top: 0;">
+        <section class="subnav" style="margin-top: 60px; padding-top: 0;">
             <hr style="margin: 0 0 0 0; 
                 border: none; 
                 border-top: 1.5px solid #04500edd; 

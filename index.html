@@ -37,8 +37,8 @@
             display: flex;
             align-items: center;
             gap: 0px;
-            padding: 0 16px;
-            height: 50px;
+            padding: 0 8px;
+            height: 60px;
             line-height: 30px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             flex-wrap: nowrap;
@@ -48,29 +48,13 @@
 
         .brandLogo {
             display: flex;
-            align-items: center;
+            align-items: left;
             flex-shrink: 1;
+            padding: 0;
             min-width: 0;
         }
 
-        .brandLogo a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #04500e;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: auto;
-            white-space: nowrap;
-            min-width: 0;
-            text-overflow: ellipsis;
-        }
 
-        .brandLogo img {
-            width: 50px;
-            height: auto;
-            object-fit: contain;
-        }
 
         .spacer {
             flex: .1 .1 auto;
@@ -118,7 +102,7 @@
         /* ===== Navbar Responsiveness on small screens ===== */
         @media (max-width: 768px) {
             nav {
-                padding: 0 12px;
+                padding: 0 2px;
             }
 
             .nav-links, .spacer  {
@@ -126,39 +110,29 @@
             }
             .brandLogo a:hover {
                 border-bottom: 2px solid #800020;
-                border-radius: 20px;
                 background: whitesmoke;
             }
         }
 
         @media (max-width: 480px) {
-            .brandLogo a {
-                gap: 4px;
-                font-size: 0.95rem;
-            }
-
             .brandLogo img {
-                width: 36px;
-                height: 28px;
+                width: 120;
+                height: 50px;
+                align-items: left;
             }
 
             .sidenav-trigger {
-                padding: 0 6px;
+                padding: 0 4px;
             }
             .brandLogo a:hover {
                 border-bottom: 2px solid #800020;
-                border-radius: 20px;
                 background: whitesmoke;
             }
         }
 
         @media (max-width: 480px) {
-            .brandLogo {
-                font-size: 0.9rem;
-            }
             .brandLogo a:hover {
                 border-bottom: 2px solid #800020;
-                border-radius: 20px;
                 background: whitesmoke;
             }
         }
@@ -319,11 +293,8 @@
             <!----------- Brand Logo ----------->
             <div class="brandLogo">
                 <a href="index.html">
-                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/bia-logo_hcdlmj.png" 
-                         alt="Logo"
-                         width="50"
-                         height="50">
-                    <b id="first">Breman Islamic</b><b id="second">Academy</b>
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/bia-logo_twvwli.png" 
+                        alt="Logo">
                 </a>
             </div>
 
@@ -379,13 +350,13 @@
 
             <!-- Welcome slide -->
             <a class="carousel-item">
-                <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/welcome-message_lgivhp.webp"
+                <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/welcome-message_lgivhp.webp"
                     alt="Welcome message">
             </a>
 
             <!-- Admission slide -->
                 <a class="carousel-item">
-                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/admission-open_v8icqq.webp"
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/admission-open_v8icqq.webp"
                         alt="2026/2027 Admission Open">
                 </a>
 
@@ -397,7 +368,7 @@
 
         <!-- Professional branded divider -->
         <div class="carousel-divider" aria-hidden="true">
-            <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/carousel-divider_srjymn.webp" 
+            <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/carousel-divider_srjymn.webp" 
             alt="Professional branded divider">
         </div>
 
@@ -484,7 +455,7 @@
             <div class="row">
                 <!-- School Information Section -->
                 <div class="col s12 m3 l3 school-info center">
-                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/favicon_hajuj4.png" alt="b.i.a Logo" style="margin-bottom: 0;">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/favicon_hajuj4.png" alt="b.i.a Logo" style="margin-bottom: 0;">
                     <h6 class="white-text font-bold" id="school-info" style="margin-top: 0;">Breman Islamic Academy</h6>
                     <p class="grey-text text-lighten-3" id="sub-school-info">
                         Sovereignty Belongs to Allah.
