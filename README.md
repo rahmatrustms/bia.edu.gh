@@ -1,4 +1,4 @@
-# B.I.A Website
+# Breman Islamic Academy Website
 
 This repository contains the B.I.A (Breman Islamic Academy) website project.
 
