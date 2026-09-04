@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/sanauallah_ronio3.jpg">
+	<title>B.I.A | Audio-Sanaaullah Qur'an</title>
+
+    <!-- Customized CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <!-- Custom helpers -->
+    <link rel="stylesheet" type="text/css" href="../css/helpers.css">
+    <!-- Custom audio player CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/audioPlayer.css">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Import Bootstrap Icon Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        /* Custom card styling */
+        .content {
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            width: 100px;
+            height: 90px;
+            align-items: center;
+            margin: 0;
+            border-radius: 1em !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .card .card-content {
+            border-radius: 1em 1em 0 0 !important;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .list {
+            width: 100%;
+            background: #dadad5 !important;
+            color: #04500e !important;
+            border-radius: 2px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .btn-small.active {
+            background: #22c90b !important;
+            color: #f6f7ec !important;
+            box-shadow: 0 4px 8px rgba(34,201,11,0.3) !important;
+        }
+
+        .btn-small.active:hover {
+            background: #1fa409 !important;
+            box-shadow: 0 6px 12px rgba(31,164,9,0.4) !important;
+        }
+
+        .card .card-action {
+            border-radius: 0 0 1em 1em !important;
+            border-top: 1px solid rgba(160,160,160,0.2);
+        }
+
+        .card img {
+            width: 100px;
+            height: 90px;
+            padding: 0;
+            margin: 0;
+            border-bottom: 3.5px solid rgb(12, 191, 12) !important;
+            border-radius: 0.5em 0.5em !important;;
+        }
+
+         /* Custom collection styling */
+        .card-panel {
+            margin: 0 0 0 0 !important;
+            border: none !important;
+            border-radius: 10px !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        }
+        .collection {
+            border: none !important;
+            margin: 0;
+        }
+
+        .collection-item {
+            color: #04500e !important;
+            border-radius: 10px !important;
+            border: 1px solid rgba(128, 128, 128, 0.319);
+        }
+
+        .collection-item:hover {
+            color: #04500e !important;
+            border-radius: 10px !important;
+            border: 1px solid #22c90b;
+            background: whitesmoke;
+            cursor: pointer;
+        }
+
+		.audios-section p {
+			margin: 20px;
+		}
+
+        .audios-section a{
+			background: #22c90b !important;
+            color: white!important;
+            padding: 5px 10px;
+            border-radius: 5px;
+		}
+    </style>
+</head>
+<body>
+<main>
+        <!-- =====================CARDS============== -->
+        <section class="container">
+            <div class="row content">
+                <section class="col s6 m6 l4 animate">
+                    <h1 class="flow-text font-bold" 
+                        style="font-size: 1.25rem; 
+                        margin: 0 0 20px 0;
+                        white-space: nowrap;">Sanaaullah Ishaq Frimpong
+                    </h1>
+
+                    <div class="card" style="margin-left: 5px;">
+                        <div class="card-content">
+                            <!-- Card Image -->
+                            <span class="card-title">
+                                <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/sanauallah_ronio3.jpg" 
+                                     alt="sanaaullah"
+                                      width="100"
+                                      height="90">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card-action" style="display: flex; justify-content: space-around; padding: 0px;">
+                        <a href="sanaullah-quran.html" 
+                           target="content"
+                           class="list btn-small active col s6 font-bold" 
+                           style="margin: 25px 8px 8px 0; 
+                           border-radius: 4px !important; 
+                           display: flex; 
+                           align-items: center; 
+                           justify-content: center;">
+                            Qur'an
+                        </a>
+
+                        <a href="sanaullah-videos.html"
+                           target="content" 
+                           class="list btn-small grey col s6 font-bold"
+                           style="margin: 25px 8px 10px 0; 
+                           border-radius: 4px !important; 
+                           display: flex; 
+                           align-items: center;
+                           justify-content: center; 
+                           box-shadow: none;">
+                            Videos
+                        </a>
+
+                        <a href="sanaullah-others.html"
+                           target="content" class="list btn-small grey col s6 font-bold" style="margin: 25px 8px 10px 0; border-radius: 4px !important; display: flex; align-items: center;
+                        justify-content: center; box-shadow: none;">
+                            Others
+                        </a>
+
+                        <a href="sanaullah-info.html"
+                           target="" class="list btn-small grey col s6 font-bold" style="margin: 25px 0 10px 0; border-radius: 4px !important; display: flex; align-items: center;
+                        justify-content: center; box-shadow: none;">
+                            Info
+                        </a>
+                    </div>
+                </section>
+
+                <section class="audios-section">
+                    <div class="row content">
+                        <div class="card-panel col s12 m12 l12" style="padding: 0;">
+                            <div class="collection" style="margin: 0;">
+                                <ul id="audio-list" class="collection"></ul>
+								<p><b>
+									This page is currently undergoing some maintenace.
+									You can support this maintenance financially through this link
+								    <a href = "https://useaccrue.com/pay/@brakindness"
+                                       target="_blank"
+                                       noreferrer
+                                       noopener> Donate to support </a>
+								</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Qur'an Playlist -->
+    <script src="../js/quran-data.js"></script>
+
+    <script src="../js/storage.js"></script>
+
+    <script src="../js/playlist.js"></script>
+
+    <!-- Playlist Engine -->
+    <script src="../js/playlist.js"></script>
+
+    <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        renderPlaylist(window.quranAudios);
+
+        setTimeout(() => {
+            if (window.restoreActivePlaylistTrack) {
+                window.restoreActivePlaylistTrack(true);
+            }
+        }, 250);
+
+    });
+
+    </script>
+
+</body>
+</html>
+</body>
+</html>

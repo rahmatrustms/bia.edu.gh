@@ -103,6 +103,20 @@
 }
 
 @media screen and (min-width: 690px) {
+    #first-card {
+        position: relative;
+        left: 78% !important;
+    }
+
+    #second-card {
+        margin-left: 34% !important;
+    }
+
+    #third-card {
+        position: relative;
+        right: 35% !important;
+    }
+    
     #copyright {
         white-space: nowrap;
         text-overflow: ellipsis;
