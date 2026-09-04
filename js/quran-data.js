@@ -2,7 +2,7 @@ const quranAudios = [
     {
         title: "(001)_Al-Fatiha",
         duration: "00:00",
-        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/001__Al-Faatihah_k5vow7.mp3",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/q_auto/001__Al-Faatihah_k5vow7.mp3",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
