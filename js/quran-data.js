@@ -151,15 +151,150 @@ const quranAudios = [
         artist: "Sanauallah Ishaq Frimpong"
     },
 
-    /*
     {
-        title: "(066)_At-Tahriim",
+        title: "(067)_At-Tahriim",
         duration: "00:00",
         src: "",
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     },
-    */
+
+    {
+        title: "(068)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(069)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(070)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(071)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(072)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(073)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(074)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(075)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(076)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(077)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(078)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(079)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(080)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(081)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(082)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(083)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
+    {
+        title: "(084)_At-Tahriim",
+        duration: "00:00",
+        src: "https://res.cloudinary.com/rahmatrust-m-s/video/upload/fl_attachment/f_auto/q_auto/084__Al-Inshiqaaq_fgwstz.mp3",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+
     {
         title: "(085)_Al-Buruuj",
         duration: "00:00",
@@ -399,6 +534,16 @@ const quranAudios = [
         artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
         artist: "Sanauallah Ishaq Frimpong"
     }
+
+    /*
+    {
+        title: "(066)_At-Tahriim",
+        duration: "00:00",
+        src: "",
+        artwork: "https://res.cloudinary.com/rahmatrust-m-s/image/upload/w_1000/f_auto/q_auto/sanauallah_ronio3.jpg",
+        artist: "Sanauallah Ishaq Frimpong"
+    },
+    */
 ];
 
 window.quranAudios = quranAudios;

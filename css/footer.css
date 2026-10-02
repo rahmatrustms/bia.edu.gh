@@ -1,0 +1,89 @@
+/* =========== Footer Styling ========= */
+footer {
+    position: relative;
+    z-index: 98;
+    border-radius: 1em 1em 0 0 !important;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+}
+
+.footer-content {
+    padding: 0 8px !important;
+}
+
+
+/*------- School's Information ------*/
+.school-info img {
+    margin: 10px 0;
+    width: 30%;
+}
+
+.social-media-icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0 10px;
+
+}
+/*----------------------------------*/
+
+
+/*--- Contact Information --- */
+.contact-info p {
+    display: flex !important;
+    justify-content: left !important;
+}
+.contact-info i {
+    display: flex !important;
+    margin-right: 8px !important;
+    vertical-align: middle !important;
+}
+/*-------------------------*/
+
+
+/* ----Horizontal line styling for footer sections---- */
+.page-footer hr {
+    border-color: 8px solid rgba(182, 20, 20, 0.2); 
+    margin: 0; 
+    line-height: 0;
+    padding: 0;
+}
+/* -----------------------End------------------------- */
+
+.page-footer ul li a {
+    padding: 0;
+    transition: all 0.2s ease;
+}
+
+.page-footer ul li a:hover {
+
+    font-weight: 600;
+    border-left: 5px solid #056313;
+    background: #ecebe6 !important;
+    color: #04500e !important;
+}
+
+/* Audio player styling */
+audio {
+    border-radius: 0.8em !important;
+    position: relative;
+    right: 15% !important;
+    top: 2px !important;
+    height: 25px !important;
+    width: 25% !important; /* Responsive for smaller screens */
+}
+
+/* Audio player container styling */
+.audio-container {
+    display: flex;
+    justify-content: center !important;
+    align-items: left !important;
+    padding: 5px 0;
+}
+
+/* Footer copyright styling */
+footer.page-footer .footer-copyright {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/* ========== End of Footer Styling ========= */
