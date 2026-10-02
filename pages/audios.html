@@ -12,12 +12,11 @@
     <title>B.I.A | Media Library</title>
 
     <!-- Customized CSS -->
-     <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/body.css">
     <link rel="stylesheet" type="text/css" href="../css/mediaLibrary.css">
     <link rel="stylesheet" type="text/css" href="../css/media-query.css">
-
-    <!-- Custom helpers -->
-    <link rel="stylesheet" type="text/css" href="../css/helpers.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
 
     <!-- Custom audio player CSS -->
     <link rel="stylesheet" type="text/css" href="../css/audioPlayer.css">
@@ -31,17 +30,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
     <style>
-        /* ======== Global page layout ====== */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            background-repeat: no-repeat; 
-            background-size: cover;
-        }
-        /* ============================================ */
-
         /* ======== Header and top navigation ====== */
         nav {
             position: fixed;
@@ -61,27 +49,44 @@
             text-overflow: ellipsis;
         }
 
-        .brandLogo {
-            margin: 0 30% 0 0;
-            display: flex;
-            align-items: center;
-            flex-shrink: 1;
-            min-width: 0;
+                /* ===== Navbar Responsiveness on small screens ===== */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 2px;
+            }
+
+            .nav-links, .spacer  {
+                display: none;
+            }
+            .brandLogo a:hover {
+                border-bottom: 2px solid #800020;
+                background: whitesmoke;
+            }
         }
 
-        .brandLogo {
-            display: flex;
-            align-items: left;
-            flex-shrink: 1;
-            padding: 0;
-            min-width: 0;
+        @media (max-width: 480px) {
+            .brandLogo img {
+                width: 120;
+                height: 50px;
+                align-items: left;
+            }
+
+            .sidenav-trigger {
+                padding: 0 4px;
+            }
+            .brandLogo a:hover {
+                border-bottom: 2px solid #800020;
+                background: whitesmoke;
+            }
         }
 
-        .brandLogo img {
-            width: 45px;
-            height: 34px;
-            object-fit: contain;
+        @media (max-width: 480px) {
+            .brandLogo a:hover {
+                border-bottom: 2px solid #800020;
+                background: whitesmoke;
+            }
         }
+        /* ============================================ */
 
         .spacer {
             flex: .1 .1 auto;
@@ -96,7 +101,7 @@
         .nav-links ul {
             display: flex;
             gap: 2px;
-            margin: 0;
+            margin-right: 540%;
             padding: 0;
             list-style: none;
         }
@@ -119,6 +124,7 @@
             white-space: nowrap;
             flex-shrink: 0;
             background: transparent;
+            margin-right: 100%;
             cursor: pointer;
         }
 
@@ -334,17 +340,17 @@
                            target="content" 
                            id="active">Media Library</a>
                     </li>
+
+                    <!------------ Media Player Icon ---------->
+                    <button type="button" 
+                            class="media-player-icon" 
+                            id="toggleMediaPlayer" 
+                            aria-label="Toggle media player"
+                            style="padding: 0;">
+                        <i class="bi bi-headset"></i>
+                    </button>
                 </ul>
             </div>
-
-            <!------------ Media Player Icon ---------->
-            <button type="button" 
-                    class="media-player-icon" 
-                    id="toggleMediaPlayer" 
-                    aria-label="Toggle media player"
-                    style="padding: 0;">
-                <i class="bi bi-headset"></i>
-            </button>
 
             <!------------- Mobile Nav Icon ---------->
             <a class="sidenav-trigger right green-text hide-on-large-only"
