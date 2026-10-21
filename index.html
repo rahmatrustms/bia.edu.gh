@@ -1,955 +1,817 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#14532d">
-<title>Data Bundle Expiry Tracker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" 
+          href="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/favicon_hajuj4.png">
+    <title>B.I.A | Home</title>
 
-<style>
-:root {
-  --green: #166534;
-  --dark-green: #14532d;
-  --gold: #d4a72c;
-  --bg: #f4f7f4;
-  --white: #ffffff;
-  --text: #17251b;
-  --muted: #647067;
-  --border: #dce5dd;
-  --red: #b91c1c;
+    <!-- Customized CSS -->
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/body.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/mediaLibrary.css">
+    <link rel="stylesheet" type="text/css" href="css/helpers.css">
+    <link rel="stylesheet" type="text/css" href="css/media-query.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Import Bootstrap Icon Font -->
+    <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Cloudinary Video Player CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/cloudinary-video-player@4.0.2/dist/cld-video-player.min.css">
+
+    <style>
+        /* ======== Header and top navigation ====== */
+        nav {
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background:white;
+            display: flex;
+            align-items: center;
+            gap: 0px;
+            padding: 0 8px;
+            height: 60px;
+            line-height: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            flex-wrap: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .nav-links {
+            margin-right: 20%;
+        }
+
+        /* ===== Navbar Responsiveness on small screens ===== */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 2px;
+            }
+
+            .nav-links, .spacer  {
+                display: none;
+            }
+            .brandLogo a:hover {
+                border-bottom: 2px solid #800020;
+                background: whitesmoke;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brandLogo img {
+                width: 120;
+                height: 50px;
+                align-items: left;
+            }
+
+            .sidenav-trigger {
+                padding: 0 4px;
+            }
+            .brandLogo a:hover {
+                border-bottom: 2px solid #800020;
+                background: whitesmoke;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brandLogo a:hover {
+                border-bottom: 2px solid #800020;
+                background: whitesmoke;
+            }
+        }
+        /* ============================================ */
+
+        /* ======== Mobile sidenav styles ====== */
+        .sidenav {
+            display: none;
+            width: min(150px, 84vw);
+            max-width: 280px;
+            height: 380px;
+            max-height: calc(100vh - 40px);
+            margin: 0;
+            border-radius: 12px 12px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+            padding: 0;
+            background: white;
+            color: #04500e;
+            position: absolute;
+            left: 100%;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .sidenav.is-open {
+            display: block;
+        }
+
+        .sidenav h6 {
+            color: #04500e; 
+            margin: 10px 0 0 5px;
+            padding-bottom: 3px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .audio-sidenav-close {
+            position: absolute;
+            bottom: 10px;
+            right: 2px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            color: #04500e !important;
+            text-decoration: none;
+            z-index: 1000;
+            font-size: 0.95rem;
+        }
+
+        .audio-sidenav-close:hover {
+            background: rgba(4, 80, 14, 0.08);
+            color: #04500e !important;
+        }
+
+        .sidenav-header {
+            padding: 0px 0px 0px 0px;
+            border-bottom: 1px solid rgba(255,255,255,0.16);
+            margin-bottom: 0px;
+            position: relative;
+        }
+
+        .sidenav li a {
+            color: #04500e !important;
+            display: flex;
+            align-items: center;
+            border-radius: 12px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            margin-top: 0;
+            transition: all 0.25s ease;
+            background: whitesmoke;
+            white-space: nowrap;
+        }
+
+        .sidenav-overlay {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+
+        .carousel {
+            display: flex;
+            justify-content: center;
+            background: rgb(255, 255, 255);
+            align-items: center; 
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: 40%;
+            overflow: hidden;
+            display: block;
+        }
+
+        /* ======== Carousel video ======== */
+        .carousel-video {
+            width: 100%;
+            height: 400px;
+            display: block;
+            object-fit: contain;
+            background: #071b0d;
+        }
+
+/* ===== Cloudinary Video Player in Carousel ===== */
+
+.cloudinary-carousel-player-container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #071b0d;
+    overflow: hidden;
 }
 
-* {
-  box-sizing: border-box;
+/* Cloudinary player */
+.cloudinary-carousel-player-container .cld-video-player,
+.cloudinary-carousel-player-container .video-js {
+    width: 100% !important;
+    height: 400px !important;
+    max-width: 100%;
+    display: block;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
+/* Actual video */
+.cloudinary-carousel-player-container video {
+    width: 100% !important;
+    height: 400px !important;
+    object-fit: contain;
+    background: #071b0d;
 }
 
-header {
-  background: var(--dark-green);
-  color: white;
-  padding: 24px 18px;
-  border-bottom: 4px solid var(--gold);
-}
+        /* ======== Professional carousel/card divider ======== */
+        .carousel-divider img {
+            width: 100%;
+            height: 30px;
+            overflow: hidden;
+            display: flex;
+            margin: 2px auto;
+        }
 
-.header-inner, main, footer {
-  width: min(1100px, 94%);
-  margin: auto;
-}
+        /* Custom card styling */
+        .card {
+            border-radius: 1em !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+            transition: all 0.3s ease-in-out !important;
+        }
 
-.brand {
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: #f4d780;
-  text-transform: uppercase;
-}
-
-header h1 {
-  margin: 8px 0 4px;
-  font-size: clamp(23px, 5vw, 32px);
-}
-
-header p {
-  margin: 0;
-  color: #e4eee6;
-  font-size: 14px;
-}
-
-main {
-  padding: 22px 0 35px;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.stat, .panel {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 17px;
-}
-
-.stat span {
-  display: block;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.stat strong {
-  display: block;
-  margin-top: 5px;
-  font-size: 27px;
-  color: var(--green);
-}
-
-.panel {
-  margin-bottom: 18px;
-}
-
-.panel h2 {
-  margin: 0 0 15px;
-  font-size: 19px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.field {
-  min-width: 0;
-}
-
-.field label {
-  display: block;
-  font-size: 13px;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
-input, select {
-  width: 100%;
-  min-width: 0;
-  padding: 11px;
-  border: 1px solid #cbd5ce;
-  border-radius: 7px;
-  font: inherit;
-  font-size: 14px;
-  background: white;
-  color: var(--text);
-}
-
-input:focus, select:focus {
-  outline: 2px solid #86b99a;
-  border-color: var(--green);
-}
-
-.hint {
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-.preview {
-  margin-top: 15px;
-  background: #edf7ef;
-  border: 1px solid #c9e5ce;
-  padding: 13px;
-  border-radius: 8px;
-}
-
-.preview span {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.preview strong {
-  display: block;
-  color: var(--green);
-  font-size: 20px;
-}
-
-button {
-  border: 0;
-  border-radius: 7px;
-  padding: 11px 15px;
-  font: inherit;
-  font-size: 13px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 2px;
-}
-
-.primary {
-  background: var(--green);
-  color: white;
-}
-
-.secondary {
-  background: #e8eee9;
-  color: var(--dark-green);
-}
-
-.danger {
-  background: #fff0f0;
-  color: var(--red);
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 15px;
-}
-
-.toolbar {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.toolbar input, .toolbar select {
-  flex: 1;
-}
-
-.table-wrap {
-  overflow-x: auto;
-  width: 100%;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 13px;
-}
-
-th, td {
-  text-align: left;
-  padding: 12px 10px;
-  border-bottom: 1px solid var(--border);
-  white-space: nowrap;
-}
-
-th {
-  color: var(--muted);
-  font-size: 11px;
-  text-transform: uppercase;
-  background: #f8faf8;
-}
-
-.status {
-  display: inline-block;
-  border-radius: 20px;
-  padding: 4px 9px;
-  font-size: 11px;
-  font-weight: bold;
-}
-
-.active {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.today {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-.expired {
-  background: #fee2e2;
-  color: #991b1b;
-}
-
-.empty {
-  padding: 25px;
-  text-align: center;
-  color: var(--muted);
-}
-
-.row-actions {
-  display: flex;
-  gap: 6px;
-}
-
-.row-actions button {
-  padding: 7px 9px;
-}
-
-footer {
-  padding: 0 0 25px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.notice {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 12px;
-}
-
-@media (max-width: 600px) {
-  .stats {
-    gap: 7px;
-  }
-
-  .stat {
-    padding: 12px 9px;
-  }
-
-  .stat strong {
-    font-size: 22px;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .toolbar {
-    flex-direction: column;
-  }
-
-  .panel {
-    padding: 13px;
-  }
-}
-
-@media print {
-  header {
-    background: white;
-    color: black;
-    border-bottom: 2px solid black;
-  }
-
-  header p, .brand {
-    color: black;
-  }
-
-  .no-print, form, footer {
-    display: none !important;
-  }
-
-  body {
-    background: white;
-  }
-
-  .panel, .stat {
-    border: 1px solid #aaa;
-    break-inside: avoid;
-  }
-}
-</style>
+        #donate a{
+			background: #22c90b !important;
+            color: white!important;
+            padding: 5px 10px;
+            border-radius: 5px;
+		}
+    </style>
 </head>
-
 <body>
+    <header>
+        <nav>
+            <!----------- Brand Logo ----------->
+            <div class="brandLogo">
+                <a href="index.html">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/bia-logo_1001_x_295_px._hzlfjd.svg" 
+                        alt="Logo">
+                </a>
+            </div>
 
-<header>
-  <div class="header-inner">
-    <div class="brand">SpeedServe</div>
-    <h1>Data Bundle Expiry Tracker</h1>
-    <p>Purchase records, validity calculations and expiry monitoring.</p>
-  </div>
-</header>
+            <div class="spacer" style="flex-grow: 1;"></div>
+  
+            <!----------- Desktop nav --------->
+            <div class="nav-links">
+                <ul class="truncate">
+                    <li><a href="index.html"
+                           id="active">Home</a>
+                    </li>
 
-<main>
-  <section class="stats">
-    <div class="stat">
-      <span>Total Records</span>
-      <strong id="totalCount">0</strong>
-    </div>
-    <div class="stat">
-      <span>Active Bundles</span>
-      <strong id="activeCount">0</strong>
-    </div>
-    <div class="stat">
-      <span>Expired Bundles</span>
-      <strong id="expiredCount">0</strong>
-    </div>
-  </section>
+                    <li>
+                        <a href="#">Results</a>
+                    </li>
 
-  <section class="panel no-print">
-    <h2 id="formTitle">Add Bundle Purchase</h2>
+                    <li>
+                        <a href="#">Exams</a>
+                    </li>
 
-    <form id="bundleForm">
-      <div class="form-grid">
+                    <li>
+                        <a href="#"
+                           class="truncate">Gallery</a>
+                    </li>
 
-        <div class="field">
-          <label for="network">Network / Provider *</label>
-          <select id="network" required>
-            <option value="">Select provider</option>
-            <option value="MTN">MTN</option>
-            <option value="Telecel">Telecel</option>
-            <option value="AT">AT</option>
-            <option value="Other">Other</option>
-          </select>
+                    <li><a href="pages/audios.html" 
+                           class="truncate">Media Library</a>
+                    </li>
+
+                    <li><a href="#"
+                           class="truncate">Apply Online</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!------------- Mobile Nav Icon ---------->
+            <a href="#" 
+               data-target="mobile-nav" 
+               class="sidenav-trigger right green-text" 
+               aria-label="Open navigation menu"
+               style="margin: 0 93%;
+                     justify-content: center;"
+                class="hide-on-large-only">
+                <i class="bi bi-list"></i>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+    <!-- BASE DESIGN -->
+        <!-- CAROUSEL -->
+        <section class="carousel carousel-slider" style="margin: 63px auto 0 auto;">
+
+            <!-- Welcome slide -->
+            <a class="carousel-item">
+                <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/welcome-message_lgivhp.webp"
+                    alt="Welcome message">
+            </a>
+
+            <!-- Admission slide -->
+                <a class="carousel-item">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/admission-open_v8icqq.webp"
+                        alt="2026/2027 Admission Open">
+                </a>
+
+            <!-- Education vs School video slide -->
+            <!-- <a class="carousel-item" id="education-video-slide">
+                <div class="cloudinary-carousel-player-container"></div>
+            </a> -->
+        </section>
+
+        <!-- Professional branded divider -->
+        <div class="carousel-divider" aria-hidden="true">
+            <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/carousel-divider_srjymn.webp" 
+            alt="Professional branded divider">
         </div>
 
-        <div class="field">
-          <label for="bundleName">Bundle / Package *</label>
-          <input id="bundleName" required
-                 placeholder="e.g. 100 GB data bundle">
+        <br>
+
+        <!-- CARDS -->
+        <div class="row">
+            <div class="col s12 m6 l4 animate" id="donate">
+                <div class="card">
+                    <div class="card-content">
+                        <p><b>
+                            Do you want to support us financially? If yes, then you can do that through this link
+                            <a href = "https://useaccrue.com/pay/@brakindness"
+                                target="_blank"
+                                noreferrer
+                                noopener> Donate to support </a>
+                            <br>May Allah bless anyone who will support us with goodness.
+                        </b></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4 animate">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Welcome</span>
+                        <p>Official school website introduction.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4 animate">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Admissions</span>
+                        <p>Admissions open for 2026/2027 academic year.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4 animate">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Subjects</span>
+                        <p>Core and Elective subjects including Arabic Language are offered.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="field">
-          <label for="purchaseDate">Purchase Date *</label>
-          <input type="date" id="purchaseDate" required>
+
+        <aside class="hide-on-large-only">
+            <div class="sidenav" id="mobile-nav" style="top: 5px;">
+                <div class="sidenav-header">
+                    <a href="#" class="sidenav-close audio-sidenav-close" aria-label="Close navigation">
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+                    <h6>Quick Access</h6>
+                    <hr style="border: none; border-top: 2px solid #22c90b; width: 100%; margin-bottom: 0;">
+                </div>
+
+                <ul class="nav-item">
+                    <li><a href="index.html"
+                           id="active"
+                           class="green-text">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                           class="green-text">Results</a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                           class="green-text">Exams</a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                           class="green-text">Gallery</a>
+                    </li>
+
+                    <li><a href="pages/audios.html" 
+                           class="green-text">Media Library</a>
+                    </li>
+
+                    <li><a href="#"
+                           class="green-text">Apply Online</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="page-footer" style="background: rgba(4, 102, 15, 0.886)">
+        <div class="footer-content">
+            <div class="row">
+                <!-- School Information Section -->
+                <div class="col s12 m3 l3 school-info center">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/favicon_hajuj4.png" alt="b.i.a Logo" style="margin-bottom: 0;">
+                    <h6 class="white-text font-bold" id="school-info" style="margin-top: 0;">Breman Islamic Academy</h6>
+                    <p class="grey-text text-lighten-3" id="sub-school-info">
+                        Sovereignty Belongs to Allah.
+                        <br>We train children that gives SAKEENAH (Tranquility and Peace of Mind) in your old age.
+                    </p>
+                    <div class="social-media-icons center">
+                        <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-whatsapp"></i></a>
+                        <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-facebook"></i></a>
+                        <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-twitter"></i></a>
+                        <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <hr style="margin-top: 15px;" class="hide-on-med-and-up">
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="col s12 m4 l2">
+                    <h6 class="white-text font-semibold">Quick Links</h6>
+                    <hr style="border: none; border-top: 5px solid #fcfdfb; width: 75px;">
+                    <ul>
+                        <li><a class="grey-text text-lighten-3 col s12" href="../index.html">
+                            <i class="bi bi-house left tiny"></i>Home</a></li>
+                        <li><a class="grey-text text-lighten-3 col s12" href="#results">
+                            <i class="bi bi-clipboard-data left tiny"></i>Results</a></li>
+                        <li><a class="grey-text text-lighten-3 col s12" href="#exams">
+                            <i class="bi bi-file-earmark-text left tiny"></i>Exams</a></li>
+                        <li style="border-right: none;"><a class="grey-text text-lighten-3 col s12" href="#gallery">
+                            <i class="bi bi-images left tiny"></i>Gallery</a></li>
+                    </ul>
+                    <hr style="margin-top: 115px;" class="hide-on-small-only hide-on-med-and-up">
+                </div>
+
+                <!-- Services Section -->
+                <div class="col s12 m4 l2" id="services">
+                    <h6 class="white-text font-semibold">Services</h6>
+                    <hr style="border: none; border-top: 5px solid #fcfdfb; width: 50px;">
+                    <ul>
+                        <li><a class="grey-text text-lighten-3 col s12 m12 l12" 
+                            href="pages/audios.html">
+                            <i class="bi bi-headset left tiny"></i>Media Library</a></li>
+                        <li><a class="grey-text text-lighten-3 col s12 m12 l12" href="#apply">
+                            <i class="bi bi-pencil-square left tiny"></i>Apply Online</a></li>
+                        <li><a class="grey-text text-lighten-3 col s12 m12 l12" href="#modal2">
+                            <i class="bi bi-question-circle left tiny"></i>Help & Support</a></li>
+                    </ul>
+                    <hr class="col s12 m12 l12 hide-on-med-and-up" style="margin: 10px 0;">
+                </div>
+
+                <!-- Contact Us Information Section -->
+                <div class="col s12 m6 l3 contact-info" id="contact">
+                    <h6 class="white-text font-semibold">Contact Us</h6>
+                    <hr style="border: none; border-top: 5px solid #fcfdfb; width: 70px;">
+                    <p class="grey-text text-lighten-3">
+                        <i class="bi bi-geo-alt small-icon"></i>
+                        <a class="grey-text text-lighten-3" href="https://maps.app.goo.gl/DE4b49jHT5XzuMd49"  target="_blank" style="line-height: 20px;">
+                            Behind Breman Asikuma Main Lorry Station, Central Region, Ghana
+                        </a>
+                    </p>
+                    <p class="grey-text text-lighten-3">
+                        <i class="bi bi-envelope small-icon"></i>
+                        <a href="mailto:info@bia.edu.gh" class="grey-text text-lighten-3 col s12">
+                            info@bia.edu.gh
+                        </a>
+                    </p>
+                    <p class="grey-text text-lighten-3">
+                        <i class="bi bi-telephone small-icon"></i>
+                        <a href="tel:+233241303485" class="grey-text text-lighten-3">
+                            +233 241 303 485
+                        </a>
+                    </p>
+                    <p class="grey-text text-lighten-3">
+                        <i class="bi bi-clock small-icon"></i>
+                        <span class="grey-text text-lighten-3">Mon - Fri: 6:00 AM - 5:00 PM</span>
+                    </p>
+                    <hr class="hide-on-med-and-up">
+                </div>
+
+                <!-- Audio Player Section -->
+                <div class="col s12 m3 l2 left-align" id="background-music">
+                    <h6 class="white-text font-semibold">Background Music</h6>
+                    <hr style="border: none; border-top: 5px solid #fcfdfb; width: 100px;">
+                    <div class="audio-container">
+                        <audio controls id="audio" loop>
+                            <source src="https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/f_auto/q_auto/m.background-music_ey910c.aac" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="field">
-          <label for="validity">Validity (days) *</label>
-          <input type="number" id="validity" min="1"
-                 max="3650" value="90" required>
+        <!-- Copyright Section -->
+        <div class="footer-copyright">
+            <div>
+                <div class="row">
+                    <div class="col s12 m6 l6 center" id="copyright">
+                        <span class="yellow-text font-normal text-sm">
+                            &copy; 2026 Breman Islamic Academy. All Rights Reserved.
+                        </span>
+                    </div>
+                    <div class="col s12 m6 l6 center" id="developer">
+                        <span class="grey-text text-lighten-2 font-normal text-sm ">
+                            Designed by: <span class="yellow-text">Rahma Trust IT & Digital Solutions</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
+    </footer>
 
-        <div class="field">
-          <label for="cost">Purchase Cost (GH₵)</label>
-          <input type="number" id="cost" min="0"
-                 step="0.01" placeholder="e.g. 250.00">
-        </div>
 
-        <div class="field">
-          <label for="reference">Reference / Notes</label>
-          <input id="reference"
-                 placeholder="Optional transaction reference">
-        </div>
+    <!-- Materialize JavaScript -->
+    <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-      </div>
+    <!-- Cloudinary Video Player JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/cloudinary-video-player@4.0.2/dist/cld-video-player.min.js">
+    </script>
 
-      <div class="preview">
-        <span>Calculated Expiry Date</span>
-        <strong id="expiryPreview">Select a purchase date</strong>
-        <span id="daysPreview"></span>
-      </div>
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
 
-      <div class="actions">
-        <button type="submit" class="primary" id="saveButton">
-          Save Bundle
-        </button>
-        <button type="button" class="secondary" id="resetButton">
-          Clear Form
-        </button>
-      </div>
-    </form>
-  </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <section class="panel">
-    <h2>Bundle Purchase Records</h2>
+    <script>
+    // Mobile sidenav toggle controls
+    const sidenav = document.getElementById('mobile-nav');
+    const sidenavTrigger = document.querySelector('.sidenav-trigger');
+    function openSidenav() {
+        if (sidenav) {
+            sidenav.classList.add('is-open');
+        }
+    }
 
-    <div class="toolbar no-print">
-      <input id="search" placeholder="Search network or bundle...">
-      <select id="filter">
-        <option value="all">All bundles</option>
-        <option value="active">Active</option>
-        <option value="today">Expires today</option>
-        <option value="expired">Expired</option>
-      </select>
-    </div>
+    function closeSidenav() {
+        if (sidenav) {
+            sidenav.classList.remove('is-open');
+        }
+    }
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Provider / Bundle</th>
-            <th>Purchased</th>
-            <th>Expiry Date</th>
-            <th>Cost</th>
-            <th>Status</th>
-            <th class="no-print">Actions</th>
-          </tr>
-        </thead>
-        <tbody id="records"></tbody>
-      </table>
-    </div>
+    function handleViewportChange() {
+        if (window.innerWidth > largeScreenBreakpoint) {
+            closeSidenav();
+        }
+    }
 
-    <div id="emptyMessage" class="empty">
-      No bundle records yet. Add your first purchase above.
-    </div>
+    if (sidenavTrigger) {
+        sidenavTrigger.addEventListener('click', function (event) {
+            event.preventDefault();
+            if (sidenav && sidenav.classList.contains('is-open')) {
+                closeSidenav();
+            } else {
+                openSidenav();
+            }
+        });
+    }
 
-    <div class="actions no-print">
-      <button class="secondary" id="exportCsv">Export CSV</button>
-      <button class="secondary" id="backupJson">Backup Records</button>
-      <button class="secondary" id="restoreJson">Restore Backup</button>
-      <button class="secondary" id="printButton">Print Records</button>
-      <input type="file" id="backupFile"
-             accept=".json,application/json" hidden>
-    </div>
+    document.querySelectorAll('.sidenav-close, .sidenav a').forEach(function (element) {
+        element.addEventListener('click', function () {
+            closeSidenav();
+        });
+    });
 
-    <p class="notice">
-      Records are saved in this browser on this device.
-      Export a backup regularly to prevent data loss.
-    </p>
-  </section>
-</main>
+// Initialize carousel
+document.addEventListener('DOMContentLoaded', function () {
 
-<footer>
-  Data Bundle Expiry Tracker · Local browser application
-</footer>
+    const carouselElems = document.querySelectorAll('.carousel');
 
-<script>
-"use strict";
+    let educationPlayer = null;
 
-// Change this key if you create a separate version of the app.
-const STORAGE_KEY = "dataBundleExpiryTracker_v1";
 
-const $ = id => document.getElementById(id);
+    // ==============================
+    // CREATE CLOUDINARY VIDEO PLAYER
+    // ==============================
 
-let bundles = [];
-let editingId = null;
+async function createEducationPlayer() {
 
-// Use local calendar dates to avoid UTC date-shift errors.
-function localDateString(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
+    const container = document.querySelector(
+        '#education-video-slide .cloudinary-carousel-player-container'
+    );
 
-  return `${year}-${month}-${day}`;
+    if (!container) return;
+
+    if (educationPlayer) return;
+
+    const video = document.createElement('video');
+
+    video.id = 'education-video';
+    video.className = 'cld-video-player';
+    video.setAttribute('playsinline', '');
+    video.setAttribute('controls', '');
+
+    container.appendChild(video);
+
+    educationPlayer = await cloudinary.player('education-video', {
+        cloudName: 'rahmatrust-m-s',
+        controls: true,
+        autoplay: false,
+        loop: true,
+        fluid: true,
+        title: 'Education vs School',
+        colors: {
+            base: '#D31010',
+            accent: '#33D644'
+        }
+    });
+
+    educationPlayer.source('Education_vs_School_cgbodb');
 }
 
-function parseDate(value) {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(value || "")) {
-    return null;
-  }
 
-  const [year, month, day] = value.split("-").map(Number);
-  const date = new Date(year, month - 1, day);
+    // ==============================
+    // PLAY VIDEO
+    // ==============================
 
-  if (
-    date.getFullYear() !== year ||
-    date.getMonth() !== month - 1 ||
-    date.getDate() !== day
-  ) {
-    return null;
-  }
+    function playEducationVideo() {
 
-  return date;
-}
+        if (!educationPlayer) return;
 
-// Add validity days to the purchase date.
-function calculateExpiry(dateString, days) {
-  const date = parseDate(dateString);
+        try {
+            educationPlayer.play();
+        } catch (error) {
+            console.log('Video play waiting:', error);
+        }
+    }
 
-  if (!date || !Number.isInteger(days) || days < 1) {
-    return null;
-  }
 
-  date.setDate(date.getDate() + days);
-  return localDateString(date);
-}
+    // ==============================
+    // PAUSE VIDEO
+    // ==============================
 
-function formatDate(value) {
-  const date = parseDate(value);
+    function pauseEducationVideo() {
 
-  if (!date) return "—";
+        if (!educationPlayer) return;
 
-  return date.toLocaleDateString("en-GB", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric"
-  });
-}
+        try {
+            educationPlayer.pause();
+        } catch (error) {
+            console.log('Video pause:', error);
+        }
+    }
 
-function escapeHtml(value) {
-  return String(value ?? "").replace(/[&<>"']/g, char => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  })[char]);
-}
 
-function getStatus(bundle) {
-  const today = localDateString();
+    // ==============================
+    // INITIALIZE CAROUSEL
+    // ==============================
 
-  if (bundle.expiryDate < today) {
-    return { key: "expired", label: "Expired" };
-  }
+    const carouselInstances = M.Carousel.init(carouselElems, {
 
-  if (bundle.expiryDate === today) {
-    return { key: "today", label: "Expires today" };
-  }
+        fullWidth: true,
 
-  return { key: "active", label: "Active" };
-}
+        indicators: true,
 
-function formatMoney(value) {
-  if (value === "" || value == null) return "—";
+        numVisible: 1,
 
-  return "GH₵ " + Number(value).toLocaleString("en-GH", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
-}
+        onCycleTo: function (element) {
 
-function saveStorage() {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(bundles));
-    return true;
-  } catch (error) {
-    alert("Could not save records. Export a backup and check browser storage.");
-    return false;
-  }
-}
+            // ==========================
+            // VIDEO SLIDE
+            // ==========================
 
-function loadStorage() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
+            if (element.id === 'education-video-slide') {
 
-    if (saved) {
-      const parsed = JSON.parse(saved);
+                createEducationPlayer();
 
-      if (Array.isArray(parsed)) {
-        bundles = parsed.filter(item =>
-          item &&
-          typeof item.id === "string" &&
-          typeof item.network === "string" &&
-          typeof item.bundleName === "string" &&
-          parseDate(item.purchaseDate) &&
-          parseDate(item.expiryDate) &&
-          Number.isInteger(item.validity) &&
-          item.validity >= 1 &&
-          item.validity <= 3650 &&
-          calculateExpiry(item.purchaseDate, item.validity)
-            === item.expiryDate
+                // Give Cloudinary a moment to initialize
+                setTimeout(function () {
+
+                    playEducationVideo();
+
+                }, 1000);
+
+            }
+
+
+            // ==========================
+            // IMAGE SLIDES
+            // ==========================
+
+            else {
+
+                pauseEducationVideo();
+
+            }
+
+        }
+
+    });
+
+
+// ==============================
+// AUTOMATIC SLIDE CHANGE
+// ==============================
+
+carouselInstances.forEach(function (carousel) {
+
+    let carouselTimer = null;
+
+    function startCarouselTimer() {
+
+        clearTimeout(carouselTimer);
+
+        const activeSlide =
+            carousel.el.querySelector('.carousel-item.active');
+
+        // If video slide is active, let the video control the timing
+        if (activeSlide && activeSlide.id === 'education-video-slide') {
+            return;
+        }
+
+        // Image slides stay for 10 seconds
+        carouselTimer = setTimeout(function () {
+
+            carousel.next();
+
+        }, 9000);
+    }
+
+
+    // Start timer initially
+    startCarouselTimer();
+
+
+    // Watch slide changes
+    carousel.el.addEventListener('click', function () {
+        setTimeout(startCarouselTimer, 100);
+    });
+
+
+    // Also restart timer whenever carousel changes
+    const originalOnCycleTo = carousel.options?.onCycleTo;
+
+});
+
+
+    // ==============================
+    // MANUAL TOUCH / MOUSE CONTROL
+    // ==============================
+
+    carouselElems.forEach(function (carousel) {
+
+        carousel.addEventListener(
+            'touchstart',
+            function () {
+                pauseEducationVideo();
+            },
+            { passive: true }
         );
-      }
-    }
-  } catch (error) {
-    alert("Saved records could not be read. Restore a valid backup if available.");
-  }
-}
 
-function updatePreview() {
-  const purchase = $("purchaseDate").value;
-  const validity = Number($("validity").value);
-  const expiry = calculateExpiry(purchase, validity);
+        carousel.addEventListener(
+            'mousedown',
+            function () {
+                pauseEducationVideo();
+            }
+        );
 
-  if (!expiry) {
-    $("expiryPreview").textContent = "Enter a valid date and validity";
-    $("daysPreview").textContent = "";
-    return;
-  }
+    });
 
-  $("expiryPreview").textContent = formatDate(expiry);
 
-  const today = localDateString();
+    // ==============================
+    // CARD HOVER EFFECTS
+    // ==============================
 
-  if (expiry < today) {
-    $("daysPreview").textContent = "This expiry date is in the past.";
-  } else if (expiry === today) {
-    $("daysPreview").textContent = "The bundle expires today.";
-  } else {
-    const remaining = Math.round(
-      (parseDate(expiry) - parseDate(today)) / 86400000
-    );
-    $("daysPreview").textContent = `${remaining} calendar days from today.`;
-  }
-}
+    document.querySelectorAll('.card').forEach(function (card) {
 
-function clearForm() {
-  $("bundleForm").reset();
-  $("purchaseDate").value = localDateString();
-  $("validity").value = 90;
-  editingId = null;
-  $("formTitle").textContent = "Add Bundle Purchase";
-  $("saveButton").textContent = "Save Bundle";
-  updatePreview();
-}
+        card.addEventListener('mouseenter', function () {
 
-function render() {
-  const query = $("search").value.trim().toLowerCase();
-  const filter = $("filter").value;
+            this.style.transform =
+                'translateY(-8px) scale(1.02)';
 
-  const active = bundles.filter(b => getStatus(b).key === "active").length;
-  const expired = bundles.filter(b => getStatus(b).key === "expired").length;
+        });
 
-  $("totalCount").textContent = bundles.length;
-  $("activeCount").textContent = active;
-  $("expiredCount").textContent = expired;
+        card.addEventListener('mouseleave', function () {
 
-  const filtered = bundles
-    .filter(b => {
-      const searchable = [
-        b.network, b.bundleName, b.reference, b.purchaseDate,
-        b.expiryDate, b.cost
-      ].join(" ").toLowerCase();
+            this.style.transform =
+                'translateY(0) scale(1)';
 
-      return searchable.includes(query);
-    })
-    .filter(b => filter === "all" || getStatus(b).key === filter)
-    .sort((a, b) => b.purchaseDate.localeCompare(a.purchaseDate));
+        });
 
-  $("records").innerHTML = filtered.map(b => {
-    const status = getStatus(b);
+    });
 
-    return `
-      <tr>
-        <td>
-          <strong>${escapeHtml(b.network)}</strong><br>
-          ${escapeHtml(b.bundleName)}
-          ${b.reference
-            ? `<br><small>${escapeHtml(b.reference)}</small>`
-            : ""}
-        </td>
-        <td>${formatDate(b.purchaseDate)}</td>
-        <td><strong>${formatDate(b.expiryDate)}</strong></td>
-        <td>${formatMoney(b.cost)}</td>
-        <td>
-          <span class="status ${status.key}">
-            ${status.label}
-          </span>
-        </td>
-        <td class="no-print">
-          <div class="row-actions">
-            <button class="secondary"
-              data-action="copy" data-id="${escapeHtml(b.id)}">
-              Copy
-            </button>
-            <button class="secondary"
-              data-action="edit" data-id="${escapeHtml(b.id)}">
-              Edit
-            </button>
-            <button class="danger"
-              data-action="delete" data-id="${escapeHtml(b.id)}">
-              Delete
-            </button>
-          </div>
-        </td>
-      </tr>`;
-  }).join("");
-
-  $("emptyMessage").hidden = filtered.length > 0;
-}
-
-$("purchaseDate").addEventListener("input", updatePreview);
-$("validity").addEventListener("input", updatePreview);
-$("search").addEventListener("input", render);
-$("filter").addEventListener("change", render);
-
-$("bundleForm").addEventListener("submit", event => {
-  event.preventDefault();
-
-  const network = $("network").value;
-  const bundleName = $("bundleName").value.trim();
-  const purchaseDate = $("purchaseDate").value;
-  const validity = Number($("validity").value);
-  const costText = $("cost").value;
-  const reference = $("reference").value.trim();
-
-  if (!network || !bundleName || !parseDate(purchaseDate)) {
-    alert("Please enter all required details correctly.");
-    return;
-  }
-
-  if (!Number.isInteger(validity) || validity < 1 || validity > 3650) {
-    alert("Validity must be a whole number between 1 and 3650 days.");
-    return;
-  }
-
-  if (costText !== "" &&
-      (!Number.isFinite(Number(costText)) || Number(costText) < 0)) {
-    alert("Enter a valid non-negative purchase cost.");
-    return;
-  }
-
-  const expiryDate = calculateExpiry(purchaseDate, validity);
-
-  const record = {
-    id: editingId || (
-      typeof crypto.randomUUID === "function"
-        ? crypto.randomUUID()
-        : String(Date.now()) + Math.random().toString(36).slice(2)
-    ),
-    network,
-    bundleName,
-    purchaseDate,
-    validity,
-    expiryDate,
-    cost: costText === "" ? "" : Number(costText),
-    reference
-  };
-
-  const previous = bundles.slice();
-
-  if (editingId) {
-    bundles = bundles.map(b => b.id === editingId ? record : b);
-  } else {
-    bundles.push(record);
-  }
-
-  if (!saveStorage()) {
-    bundles = previous;
-    return;
-  }
-
-  clearForm();
-  render();
 });
-
-$("resetButton").addEventListener("click", clearForm);
-
-$("records").addEventListener("click", async event => {
-  const button = event.target.closest("button[data-action]");
-  if (!button) return;
-
-  const bundle = bundles.find(b => b.id === button.dataset.id);
-  if (!bundle) return;
-
-  const action = button.dataset.action;
-
-  if (action === "copy") {
-    const text =
-      `DATA BUNDLE RECORD\n` +
-      `Provider: ${bundle.network}\n` +
-      `Bundle: ${bundle.bundleName}\n` +
-      `Purchase date: ${formatDate(bundle.purchaseDate)}\n` +
-      `Validity: ${bundle.validity} days\n` +
-      `Expiry date: ${formatDate(bundle.expiryDate)}\n` +
-      `Cost: ${formatMoney(bundle.cost)}\n` +
-      `Reference: ${bundle.reference || "—"}`;
-
-    try {
-      await navigator.clipboard.writeText(text);
-      alert("Bundle record copied.");
-    } catch {
-      window.prompt("Copy this bundle record:", text);
-    }
-  }
-
-  if (action === "edit") {
-    editingId = bundle.id;
-    $("network").value = bundle.network;
-    $("bundleName").value = bundle.bundleName;
-    $("purchaseDate").value = bundle.purchaseDate;
-    $("validity").value = bundle.validity;
-    $("cost").value = bundle.cost;
-    $("reference").value = bundle.reference;
-    $("formTitle").textContent = "Edit Bundle Purchase";
-    $("saveButton").textContent = "Save Changes";
-    updatePreview();
-    $("bundleForm").scrollIntoView({ behavior: "smooth" });
-  }
-
-  if (action === "delete") {
-    if (!confirm(
-      `Delete the ${bundle.network} record for "${bundle.bundleName}"?`
-    )) return;
-
-    const previous = bundles.slice();
-    bundles = bundles.filter(b => b.id !== bundle.id);
-
-    if (!saveStorage()) {
-      bundles = previous;
-      return;
-    }
-
-    render();
-  }
-});
-
-// Download a CSV file that opens in Excel or compatible spreadsheet apps.
-$("exportCsv").addEventListener("click", () => {
-  const rows = [
-    ["Provider", "Bundle", "Purchase Date", "Validity Days",
-     "Expiry Date", "Cost GHS", "Reference", "Status"],
-    ...bundles.map(b => [
-      b.network, b.bundleName, b.purchaseDate, b.validity,
-      b.expiryDate, b.cost, b.reference, getStatus(b).label
-    ])
-  ];
-
-  const csv = rows.map(row =>
-    row.map(value =>
-      '"' + String(value ?? "").replace(/"/g, '""') + '"'
-    ).join(",")
-  ).join("\r\n");
-
-  downloadFile(
-    "\uFEFF" + csv,
-    "data-bundle-records.csv",
-    "text/csv;charset=utf-8;"
-  );
-});
-
-// JSON backup preserves the complete records for later restoration.
-$("backupJson").addEventListener("click", () => {
-  downloadFile(
-    JSON.stringify(bundles, null, 2),
-    "data-bundle-backup.json",
-    "application/json"
-  );
-});
-
-function downloadFile(content, filename, type) {
-  const blob = new Blob([content], { type });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-
-$("restoreJson").addEventListener("click", () => {
-  $("backupFile").click();
-});
-
-$("backupFile").addEventListener("change", async event => {
-  const file = event.target.files[0];
-  if (!file) return;
-
-  try {
-    const data = JSON.parse(await file.text());
-
-    if (!Array.isArray(data)) throw new Error("Invalid backup");
-
-    const valid = data.every(b =>
-      b &&
-      typeof b.id === "string" &&
-      typeof b.network === "string" &&
-      typeof b.bundleName === "string" &&
-      parseDate(b.purchaseDate) &&
-      Number.isInteger(b.validity) &&
-      b.validity >= 1 &&
-      b.validity <= 3650 &&
-      calculateExpiry(b.purchaseDate, b.validity) === b.expiryDate &&
-      (b.cost === "" ||
-        (typeof b.cost === "number" &&
-         Number.isFinite(b.cost) && b.cost >= 0)) &&
-      typeof b.reference === "string"
-    );
-
-    if (!valid) throw new Error("Invalid records");
-
-    if (!confirm(
-      "Restoring this backup will replace the records in this browser. Continue?"
-    )) return;
-
-    const previous = bundles;
-    bundles = data;
-
-    if (!saveStorage()) {
-      bundles = previous;
-      return;
-    }
-
-    clearForm();
-    render();
-    alert("Backup restored successfully.");
-  } catch {
-    alert("Could not restore the file. Select a valid JSON backup.");
-  } finally {
-    event.target.value = "";
-  }
-});
-
-$("printButton").addEventListener("click", () => window.print());
-
-// Initialize the application.
-loadStorage();
-clearForm();
-render();
 </script>
-
 </body>
 </html>
