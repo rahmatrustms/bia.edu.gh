@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: bia-fullstack-v1
+    name: bia.edu.gh
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
