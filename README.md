@@ -1,45 +1,43 @@
-# Breman Islamic Academy Website
+# B.I.A. Full-Stack Website — Modular Edition
 
-This repository contains the B.I.A (Breman Islamic Academy) website project.
+A learning-focused Flask + SQLite project for Breman Islamic Academy (B.I.A.). It preserves the existing audio database and adds a reciters directory, reciter detail pages, a responsive gallery, and a curved snake-style playback progress line.
 
-## Overview
+## Run on Windows
+1. Extract the ZIP and open the `bia-fullstack-beginner` folder in VS Code.
+2. Open a terminal in that folder.
+3. Create and activate a virtual environment:
+   ```powershell
+   py -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   pip install -r requirements.txt
+   python app.py
+   ```
+4. Open `http://127.0.0.1:5000`.
 
-The website includes:
-- a media player for Quran audio
-- a media library and playlist UI
-- audio playback controls, favorites, and downloads
-- pages for reciters, videos, and information
+For phone testing, connect the phone and laptop to the same hotspot or Wi-Fi and open `http://LAPTOP-IP:5000` on the phone. Find the laptop IP with `ipconfig`.
 
-## Structure
+## Pages
+- `/` — existing homepage
+- `/audio` — media library and player
+- `/gallery` — responsive gallery with search, filters and image preview
+- `/api/health`, `/api/audio` — existing API endpoints
 
-- `index.html` — main landing page
-- `pages/` — additional content pages such as Quran playlists, reciters, and media library
-- `css/` — stylesheets for UI, audio player, and media library
-- `js/` — JavaScript code for player engine, UI, playlist rendering, and audio data
+## Modular structure
+- `app.py` registers the Flask app and existing API.
+- `config.py` stores project paths and configuration.
+- `database/db.py` centralizes SQLite connections and queries.
+- `routes/pages.py` contains page routes.
+- `templates/` contains each page.
+- `static/css/style.css` contains shared and page-specific styles.
+- `static/js/` contains separate behavior for the media library, reciters, reciter detail, gallery, and navigation.
 
-## Key files
+## Database preservation
+The supplied `bia.db` was preserved in this package. Back it up before experimenting. Do not delete it to refresh tracks. The current gallery cards are demonstration entries and should be connected to an actual gallery table/admin upload workflow before public use.
 
-- `js/player.js` — global audio player engine
-- `js/player-ui.js` — UI bindings and player controls
-- `js/playlist.js` — playlist rendering and click handling
-- `js/quran-data.js` — Quran audio metadata and default artwork
-- `css/audioPlayer.css` — audio player styling
+## Cloudinary and deployment security
+This project does not yet implement Cloudinary auto-sync or a secure webhook endpoint. Those require server-side credentials, signature validation, and deployment configuration. Do not expose Flask's development server publicly. The current write API is a learning prototype and needs authentication and validation before public deployment.
 
-## Local setup
 
-Open `index.html` or pages in a browser to run the site locally. No build step is required.
+## Managing the audio catalogue
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Notes
-
-- The audio player uses browser `Audio` and localStorage for persisted state.
-- Some pages load nested content via `iframe`.
-- Artwork defaults are applied when audio data items lack an `artwork` URL.
-
-## Troubleshooting
-
-- If playback does not start on first click, try reloading the page.
-- Open the browser DevTools console for runtime errors and missing resource warnings.
+Starter audio records are maintained in `data/tracks.py` as the `tracks` list. Each entry is a tuple in this order: title, reciter, category, audio URL, cover image URL, duration in seconds. The Flask app imports this list and synchronizes its entries into SQLite at startup. Keep titles unique because the database uses the title to update existing records. The `/api/audio` endpoint reads the database, which is what the audio page displays.

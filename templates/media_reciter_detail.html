@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Listen to recordings by {{ reciter }} in the Breman Islamic Academy Media Library.">
+    <title>{{ reciter }} | Media Library | Breman Islamic Academy</title>
+    <meta name="theme-color" content="#075b3d">
+    <script>document.documentElement.dataset.theme = localStorage.getItem("bia-theme") || "light";</script>
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.webmanifest') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/media-library.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
+    <script defer src="{{ url_for('static', filename='js/site.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/track-controls.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/audio-volume.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/media-player.js') }}"></script>
+</head>
+<body>
+    <header class="site-header media-site-header">
+        <a class="brand" href="/"><img class="brand-logo" src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/bia-logo_1001_x_295_px._hzlfjd.svg" alt="Breman Islamic Academy"></a>
+        <a class="media-mobile-search" href="/audio#mediaSearch" aria-label="Search Media Library" title="Search Media Library"><i data-lucide="search" aria-hidden="true">⌕</i></a>
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="media-navigation"><i data-lucide="menu" aria-hidden="true">☰</i></button>
+        <nav class="main-nav media-site-nav" id="media-navigation" aria-label="Main navigation">
+            <div class="home-nav-heading">
+                <span>Explore B.I.A.<small>Sovereignty Belongs to Allah</small></span>
+                <button class="home-nav-close" type="button" aria-label="Close navigation"><i data-lucide="x" aria-hidden="true">×</i></button>
+            </div>
+            <div class="home-nav-links">
+                <a href="/"><i class="home-nav-icon" data-lucide="house" aria-hidden="true">⌂</i><span>Home</span></a>
+                <a href="/#about"><i class="home-nav-icon" data-lucide="book-open" aria-hidden="true">▤</i><span>About</span></a>
+                <a href="/gallery"><i class="home-nav-icon" data-lucide="images" aria-hidden="true">▧</i><span>Gallery</span></a>
+                <a class="active" href="/audio" aria-current="page"><i class="home-nav-icon" data-lucide="headphones" aria-hidden="true">♫</i><span>Media Library</span></a>
+            </div>
+            <p class="home-nav-section-label">Student services</p>
+            <div class="home-nav-services">
+                <a href="/#contact"><i class="home-nav-icon" data-lucide="clipboard-check" aria-hidden="true">▣</i><span>Results</span></a>
+                <a href="/#contact"><i class="home-nav-icon" data-lucide="notebook-pen" aria-hidden="true">✎</i><span>Exams</span></a>
+                <a href="/#contact"><i class="home-nav-icon" data-lucide="file-plus-2" aria-hidden="true">✉</i><span>Apply Online</span></a>
+            </div>
+            <a class="home-nav-portal media-nav-portal" href="/#contact" title="Contact the school about portal access">
+                <span class="home-nav-portal-icon"><i data-lucide="user-round" aria-hidden="true">●</i></span>
+                <span>Student Portal<small>Access school services</small></span>
+                <i class="home-nav-portal-arrow" data-lucide="arrow-up-right" aria-hidden="true">↗</i>
+            </a>
+            <button class="site-theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+                <i data-lucide="sun" aria-hidden="true">☼</i><span>Theme</span><span class="theme-switch" aria-hidden="true"><span></span></span>
+            </button>
+            <a class="media-nav-search home-nav-search" href="/audio#mediaSearch" aria-label="Search this page" title="Search this page"><i data-lucide="search" aria-hidden="true">⌕</i><span>Search this page</span></a>
+            <button class="site-install-button" type="button" aria-label="Install Breman Islamic Academy" title="Install app" hidden>
+                <i data-lucide="download" aria-hidden="true">↓</i><span>Install App</span>
+            </button>
+            <p class="home-nav-version">Version 1.0.0</p>
+        </nav>
+        <button class="home-nav-backdrop" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+    </header>
+
+    <main class="media-library-page media-detail-page">
+        <section class="media-detail-banner">
+            <a class="media-back-link" href="/audio"><i data-lucide="arrow-left" aria-hidden="true">←</i> Back to Media Library</a>
+        </section>
+        <section class="media-detail-shell">
+            <header class="media-reciter-profile">
+                <img src="{{ portrait }}" alt="{{ reciter }}">
+                <div class="media-profile-copy">
+                    <p class="media-profile-eyebrow">RECITER</p>
+                    <h1>{{ reciter }}</h1>
+                    <div class="media-profile-meta">
+                        {% for category in categories %}<span>{{ category }}</span>{% endfor %}
+                        <span>{{ tracks|length }} tracks</span>
+                        {% if average_duration %}<span>Avg. {{ average_duration // 60 }}:{{ '%02d'|format(average_duration % 60) }}</span>{% endif %}
+                    </div>
+                    <p class="media-profile-description">Listen to available recitations and recordings by {{ reciter }}.</p>
+                </div>
+                <blockquote class="media-quote">
+                    <span aria-hidden="true">“</span>
+                    <p>In the name of Allah, the Most Gracious, the Most Merciful.</p>
+                </blockquote>
+            </header>
+
+            <div class="media-detail-grid">
+                <section class="media-player-panel" aria-label="Media player">
+                    <div class="media-player-main">
+                        <img class="media-current-art" id="mediaCurrentArt" src="{{ tracks[0]['image_url'] }}" alt="">
+                        <div class="media-current-copy">
+                            <h2 id="mediaCurrentTitle">{{ tracks[0]['title'] }}</h2>
+                            <p>{{ reciter }}</p>
+                        </div>
+                    </div>
+                    <audio id="mediaAudio" preload="metadata" crossorigin="anonymous" src="{{ tracks[0]['audio_url'] }}" data-track-id="{{ tracks[0]['id'] }}" data-audio-url="{{ tracks[0]['audio_url'] }}" data-track-duration="{{ tracks[0]['duration_seconds'] }}"></audio>
+                    <div class="media-time-labels" data-track-id="{{ tracks[0]['id'] }}" data-audio-url="{{ tracks[0]['audio_url'] }}" data-track-duration="{{ tracks[0]['duration_seconds'] }}"><span id="mediaCurrentTime">0:00</span><span id="mediaDuration" data-duration-label>{% if tracks[0]['duration_seconds'] > 0 %}{{ tracks[0]['duration_seconds'] // 60 }}:{{ '%02d'|format(tracks[0]['duration_seconds'] % 60) }}{% else %}Detecting duration…{% endif %}</span></div>
+                    <div class="media-wave-progress" id="mediaSeek" role="slider" tabindex="0" aria-label="Audio progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <svg viewBox="0 0 600 42" preserveAspectRatio="none"><path class="media-wave-track" id="mediaWaveTrack" d="M4 22 L596 22"/><path class="media-wave-fill" id="mediaWaveFill" d="M4 22 L596 22"/><path class="media-wave-head" id="mediaWaveHead" d="M4 7 V37"/></svg>
+                    </div>
+                    <div class="media-playback-controls">
+                        <button id="mediaShuffle" type="button" aria-label="Shuffle tracks" title="Shuffle tracks"><i data-lucide="shuffle" aria-hidden="true">⤨</i></button>
+                        <button id="mediaPrevious" type="button" aria-label="Previous track" title="Previous track"><i data-lucide="skip-back" aria-hidden="true">|◀</i></button>
+                        <button class="media-play-button" id="mediaPlay" type="button" aria-label="Play" title="Play"><i data-lucide="play" aria-hidden="true">▶</i></button>
+                        <button id="mediaNext" type="button" aria-label="Next track" title="Next track"><i data-lucide="skip-forward" aria-hidden="true">▶|</i></button>
+                        <button id="mediaRepeat" type="button" aria-label="Repeat off" title="Repeat off"><i data-lucide="repeat" aria-hidden="true">↻</i></button>
+                    </div>
+                    <label class="media-volume"><i data-lucide="volume-2" aria-hidden="true">🔊</i><span>Volume</span><input id="mediaVolume" type="range" min="0" max="2" step="0.05" value="0.8" aria-label="Volume"><output class="volume-percentage" id="mediaVolumeValue">80%</output></label>
+                    <p class="media-player-status" id="mediaPlayerStatus" role="status">Choose a track or press play.</p>
+                </section>
+
+                <aside class="media-related-panel">
+                    <h2>Related Reciters</h2>
+                    {% for person in related_reciters %}
+                    <a class="media-related-reciter" href="{{ url_for('pages.media_reciter_detail', reciter_name=person.name) }}">
+                        <img src="{{ person.image_url }}" alt="" loading="lazy">
+                        <span><strong>{{ person.name }}</strong><small>{{ person.tracks }} tracks</small></span>
+                    </a>
+                    {% else %}
+                    <p class="media-related-empty">More reciters will appear here.</p>
+                    {% endfor %}
+                    <a class="media-all-reciter-link" href="/audio">View all reciters <i data-lucide="arrow-right" aria-hidden="true">→</i></a>
+                </aside>
+
+                <section class="media-track-panel">
+                    <div class="media-track-heading"><div><p class="media-profile-eyebrow">NOW PLAYING</p><h2>All Tracks ({{ tracks|length }})</h2></div><span>Title · Reciter · Duration</span></div>
+                    <ol class="media-track-list" id="mediaTrackList">
+                        {% for track in tracks %}
+                        <li>
+                            <button class="media-track-row{% if loop.first %} is-current{% endif %}" type="button" data-index="{{ loop.index0 }}" data-title="{{ track['title'] }}" data-src="{{ track['audio_url'] }}" data-image="{{ track['image_url'] }}" data-duration="{{ track['duration_seconds'] }}" data-track-id="{{ track['id'] }}" data-audio-url="{{ track['audio_url'] }}" data-track-duration="{{ track['duration_seconds'] }}" aria-label="Play {{ track['title'] }}">
+                                <span class="media-track-number">{{ loop.index }}</span>
+                                <span class="media-track-title"><strong>{{ track['title'] }}</strong><small>{{ reciter }}</small></span>
+                                <span class="media-track-category">{{ track['category'] }}</span>
+                                <span class="media-track-duration" data-duration-label>{% if track['duration_seconds'] > 0 %}{{ track['duration_seconds'] // 60 }}:{{ '%02d'|format(track['duration_seconds'] % 60) }}{% else %}Detecting…{% endif %}</span>
+                                <span class="media-track-play" aria-hidden="true"><i data-lucide="play">▶</i></span>
+                            </button>
+                            <a class="media-track-download" href="{{ url_for('download_audio', track_id=track['id']) }}" download aria-label="Download {{ track['title'] }}" title="Download {{ track['title'] }}">
+                                <i data-lucide="download" aria-hidden="true">↓</i>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ol>
+                </section>
+
+                <aside class="media-detail-promo">
+                    <p class="media-profile-eyebrow">A MOMENT FOR REFLECTION</p>
+                    <h2>Qur'an recitation brings peace to the heart.</h2>
+                    <span class="media-promo-mark" aria-hidden="true">۞</span>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="catalog-footer">
+        <div><strong>Breman Islamic Academy (B.I.A.)</strong><p>Sovereignty Belongs to Allah</p></div>
+        <div><b>Quick Links</b><a href="/">Home</a><a href="/gallery">Gallery</a><a href="/audio">Media Library</a></div>
+        <div><b>Contact Us</b><p>Breman Asikuma, Central Region - Ghana</p><p>info@bia.edu.gh</p></div>
+        <div class="catalog-footer-copyright">
+            <span>© <span id="year"></span> Breman Islamic Academy. All rights reserved.</span>
+            <span>Version 1.0.0</span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#075b3d"/>
+  <circle cx="256" cy="210" r="118" fill="none" stroke="#e4c66a" stroke-width="14"/>
+  <path d="M256 113 279 185 351 208 279 231 256 303 233 231 161 208 233 185Z" fill="#e4c66a"/>
+  <circle cx="256" cy="208" r="29" fill="#f7faf8"/>
+  <text x="256" y="390" fill="#fff" font-family="Arial,sans-serif" font-size="82" font-weight="700" text-anchor="middle">BIA</text>
+</svg>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gallery | Breman Islamic Academy</title>
+    <meta name="theme-color" content="#075b3d">
+	<script>document.documentElement.dataset.theme = localStorage.getItem("bia-theme") || "light";</script>
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.webmanifest') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/media-library.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
+	<script defer src="{{ url_for('static', filename='js/site.js') }}"></script>
+	<script defer src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+</head>
+<body>
+	<header class="site-header media-site-header">
+		<a class="brand" href="/">
+            <img class="brand-logo" 
+                 src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/bia-logo-_150_x_40_px_-1_uviyf2.svg" 
+                 alt="Breman Islamic Academy">
+        </a>
+        <a class="media-mobile-search" href="#gallerySearch" aria-label="Search photos" title="Search photos"><i data-lucide="search" aria-hidden="true">⌕</i></a>
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="media-navigation"><i data-lucide="menu" aria-hidden="true">☰</i></button>
+		<nav class="main-nav media-site-nav" id="media-navigation" aria-label="Main navigation">
+            <div class="home-nav-heading">
+                <span>Explore B.I.A.<small>Sovereignty Belongs to Allah</small></span>
+                <button class="home-nav-close" type="button" aria-label="Close navigation"><i data-lucide="x" aria-hidden="true">×</i></button>
+            </div>
+            <div class="home-nav-links">
+			    <a href="/"><i class="home-nav-icon" data-lucide="house" aria-hidden="true">⌂</i><span>Home</span></a>
+			    <a href="/#about"><i class="home-nav-icon" data-lucide="book-open" aria-hidden="true">▤</i><span>About</span></a>
+			    <a class="active" href="/gallery" aria-current="page"><i class="home-nav-icon" data-lucide="images" aria-hidden="true">▧</i><span>Gallery</span></a>
+			    <a href="/audio"><i class="home-nav-icon" data-lucide="headphones" aria-hidden="true">♫</i><span>Media Library</span></a>
+            </div>
+            <p class="home-nav-section-label">Student services</p>
+            <div class="home-nav-services">
+			    <a href="/#contact"><i class="home-nav-icon" data-lucide="clipboard-check" aria-hidden="true">▣</i><span>Results</span></a>
+			    <a href="/#contact"><i class="home-nav-icon" data-lucide="notebook-pen" aria-hidden="true">✎</i><span>Exams</span></a>
+			    <a href="/#contact"><i class="home-nav-icon" data-lucide="file-plus-2" aria-hidden="true">✉</i><span>Apply Online</span></a>
+            </div>
+            <a class="home-nav-portal media-nav-portal" href="/#contact" title="Contact the school about portal access">
+                <span class="home-nav-portal-icon"><i data-lucide="user-round" aria-hidden="true">●</i></span>
+                <span>Student Portal<small>Access school services</small></span>
+                <i class="home-nav-portal-arrow" data-lucide="arrow-up-right" aria-hidden="true">↗</i>
+            </a>
+            <button class="site-theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+                <i data-lucide="sun" aria-hidden="true">☼</i><span>Theme</span><span class="theme-switch" aria-hidden="true"><span></span></span>
+            </button>
+            <a class="media-nav-search home-nav-search" href="#gallerySearch" aria-label="Search this page" title="Search this page"><i data-lucide="search" aria-hidden="true">⌕</i><span>Search this page</span></a>
+            <button class="site-install-button" type="button" aria-label="Install Breman Islamic Academy" title="Install app" hidden>
+                <i data-lucide="download" aria-hidden="true">↓</i><span>Install App</span>
+            </button>
+            <p class="home-nav-version">Version 1.0.0</p>
+		</nav>
+        <button class="home-nav-backdrop" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+	</header>
+
+	<main class="catalog-page">
+		<section class="catalog-hero gallery-hero">
+			<div>
+				<p class="eyebrow">MOMENTS THAT MATTER</p>
+				<h1>Gallery</h1>
+				<p>Capturing moments, building memories, celebrating our journey.</p>
+			</div>
+		</section>
+		<section class="gallery-shell">
+			<div class="gallery-toolbar">
+				<input id="gallerySearch" type="search" placeholder="Search photos…" aria-label="Search photos">
+				<div class="gallery-filters">
+					<button class="filter-chip active" data-filter="all">All</button>
+					<button class="filter-chip" data-filter="school life">School Life</button>
+					<button class="filter-chip" data-filter="events">Events</button>
+					<button class="filter-chip" data-filter="sports">Sports</button>
+					<button class="filter-chip" data-filter="academics">Academics</button>
+					<button class="filter-chip" data-filter="infrastructure">Infrastructure</button>
+                    <button class="filter-chip" data-filter="school identity">School Identity</button>
+					<button class="filter-chip" data-filter="reciters">Reciters</button>
+				</div>
+			</div>
+			<div class="gallery-grid" id="galleryGrid">
+                <article class="gallery-card" data-category="academics" data-title="Classroom Learning">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/48647.jpg" alt="Students learning in class">
+                    <div>
+                        <h2>Classroom Learning</h2>
+                        <span>Academics</span>
+                        <small>Learning at B.I.A.</small>
+                    </div>
+                </article>
+                
+                <article class="gallery-card" data-category="school life" data-title="School Community">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/47782.jpg" alt="B.I.A. school community">
+                    <div>
+                        <h2>School Community</h2>
+                        <span>School Life</span>
+                        <small>Growing together</small>
+                    </div>
+                </article>
+                <article class="gallery-card" data-category="events" data-title="School Events">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/45891.jpg" alt="School event">
+                    <div>
+                        <h2>School Events</h2>
+                        <span>Events</span>
+                        <small>Memories we share</small>
+                    </div>
+                </article>
+                <article class="gallery-card" data-category="infrastructure" data-title="Campus Life">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/48647.jpg" alt="Campus life">
+                    <div>
+                        <h2>Campus Life</h2>
+                        <span>Infrastructure</span>
+                        <small>Our learning environment</small>
+                    </div>
+                </article>
+                <article class="gallery-card" data-category="academics" data-title="Learning Together">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/45891.jpg" alt="Students learning together">
+                    <div>
+                        <h2>Learning Together</h2>
+                        <span>Academics</span>
+                        <small>Knowledge and faith</small>
+                    </div>
+                </article>
+                <article class="gallery-card" data-category="school life" data-title="B.I.A. Memories">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/47782.jpg" alt="B.I.A. memories">
+                    <div>
+                        <h2>B.I.A. Memories</h2>
+                        <span>School Life</span>
+                        <small>Our journey together</small>
+                    </div>
+                </article>
+                <article class="gallery-card gallery-logo-card" data-category="school identity" data-title="Breman Islamic Academy Logo">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/bia-logo_1001_x_295_px._hzlfjd.svg" alt="Breman Islamic Academy logo">
+                    <div>
+                        <h2>Breman Islamic Academy</h2>
+                        <span>School Identity</span>
+                        <small>B.I.A. school logo</small>
+                    </div>
+                </article>
+                {% for reciter in reciters %}
+                <article class="gallery-card gallery-reciter-card" data-category="reciters" data-title="{{ reciter.display_name }}">
+                    <img src="{{ reciter.image_url }}" alt="{{ reciter.display_name }}" loading="lazy">
+                    <div>
+                        <h2>{{ reciter.display_name }}</h2>
+                        <span>Reciter</span>
+                        <small>{{ reciter.tracks }} tracks</small>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            <p id="galleryEmpty" class="empty-message" hidden>No photos match your search.</p>
+        </section>
+    </main>
+
+    <div class="gallery-lightbox" id="galleryLightbox" hidden role="dialog" aria-modal="true" aria-label="Photo preview">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close preview"><i data-lucide="x" aria-hidden="true">×</i></button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo"><i data-lucide="chevron-left" aria-hidden="true">‹</i></button>
+        <figure>
+            <img id="lightboxImage" src="" alt="">
+            <figcaption>
+                <h2 id="lightboxTitle"></h2>
+                <p id="lightboxCategory"></p>
+            </figcaption>
+        </figure>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next photo"><i data-lucide="chevron-right" aria-hidden="true">›</i></button>
+    </div>
+
+    <footer class="catalog-footer">
+        <div>
+            <strong>Breman Islamic Academy (B.I.A.)</strong>
+            <p>Sovereignty Belongs to Allah</p>
+        </div>
+        <div>
+            <b>Quick Links</b>
+            <a href="/">Home</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/audio">Media Library</a>
+        </div>
+        <div>
+            <b>Contact Us</b>
+            <p>Breman Asikuma, Central Region - Ghana</p>
+            <p><a href="tel:+233241303485">+233 241 303 485</a></p>
+            <p><a href="mailto:info@bia.edu.gh">info@bia.edu.gh</a></p>
+        </div>
+        <div class="catalog-footer-copyright">
+            <span>© <span id="year"></span> Breman Islamic Academy. All rights reserved.</span>
+            <span>Version 1.0.0</span>
+        </div>
+    </footer>
+</body>
+</html>

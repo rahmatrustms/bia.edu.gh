@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" fill="none">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="640" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F7F1"/>
+      <stop offset="1" stop-color="#DCEADF"/>
+    </linearGradient>
+    <pattern id="pattern" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M22 4 26 18 40 22 26 26 22 40 18 26 4 22 18 18 22 4Z" stroke="#075B3D" stroke-opacity=".09" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="420" fill="url(#background)"/>
+  <rect width="640" height="420" fill="url(#pattern)"/>
+  <circle cx="320" cy="176" r="69" fill="#075B3D"/>
+  <circle cx="320" cy="176" r="60" stroke="#D7B34B" stroke-width="2"/>
+  <path d="M320 125 330 163 368 176 330 189 320 227 310 189 272 176 310 163 320 125Z" fill="#D7B34B"/>
+  <circle cx="320" cy="176" r="15" fill="#F4F7F1"/>
+  <path d="M234 276h172" stroke="#075B3D" stroke-opacity=".25" stroke-width="2" stroke-linecap="round"/>
+  <text x="320" y="316" fill="#075B3D" font-family="Georgia,serif" font-size="24" font-weight="700" text-anchor="middle">Breman Islamic Academy</text>
+  <text x="320" y="348" fill="#597264" font-family="Arial,sans-serif" font-size="19" text-anchor="middle">Soverienty Belongs to Allah</text>
+</svg>

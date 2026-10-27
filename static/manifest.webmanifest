@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "Breman Islamic Academy",
+  "short_name": "B.I.A.",
+  "description": "Breman Islamic Academy school information, gallery, and media library.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7faf8",
+  "theme_color": "#075b3d",
+  "icons": [
+    {
+      "src": "/static/images/bia-app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

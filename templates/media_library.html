@@ -1,0 +1,140 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Browse Qur'an recitations, lectures, and supplications in the Breman Islamic Academy Media Library.">
+    <title>Media Library | Breman Islamic Academy</title>
+    <meta name="theme-color" content="#075b3d">
+    <script>document.documentElement.dataset.theme = localStorage.getItem("bia-theme") || "light";</script>
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.webmanifest') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/media-library.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
+    <script defer src="{{ url_for('static', filename='js/site.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/media-library.js') }}"></script>
+</head>
+<body>
+    <header class="site-header media-site-header">
+        <a class="brand" href="/">
+            <img class="brand-logo" 
+                 src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/bia-logo-_150_x_40_px_-1_uviyf2.svg" 
+                 alt="Breman Islamic Academy">
+        </a>
+        <a class="media-mobile-search" href="/audio#mediaSearch" aria-label="Search Media Library" title="Search Media Library"><i data-lucide="search" aria-hidden="true">⌕</i></a>
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="media-navigation"><i data-lucide="menu" aria-hidden="true">☰</i></button>
+        <nav class="main-nav media-site-nav" id="media-navigation" aria-label="Main navigation">
+            <div class="home-nav-heading">
+                <span>Explore B.I.A.<small>Sovereignty Belongs to Allah</small></span>
+                <button class="home-nav-close" type="button" aria-label="Close navigation"><i data-lucide="x" aria-hidden="true">×</i></button>
+            </div>
+            <div class="home-nav-links">
+                <a href="/"><i class="home-nav-icon" data-lucide="house" aria-hidden="true">⌂</i><span>Home</span></a>
+                <a href="/#about"><i class="home-nav-icon" data-lucide="book-open" aria-hidden="true">▤</i><span>About</span></a>
+                <a href="/gallery"><i class="home-nav-icon" data-lucide="images" aria-hidden="true">▧</i><span>Gallery</span></a>
+                <a class="active" href="/audio" aria-current="page"><i class="home-nav-icon" data-lucide="headphones" aria-hidden="true">♫</i><span>Media Library</span></a>
+            </div>
+            <p class="home-nav-section-label">Student services</p>
+            <div class="home-nav-services">
+                <a href="/#contact"><i class="home-nav-icon" data-lucide="clipboard-check" aria-hidden="true">▣</i><span>Results</span></a>
+                <a href="/#contact"><i class="home-nav-icon" data-lucide="notebook-pen" aria-hidden="true">✎</i><span>Exams</span></a>
+                <a href="/#contact"><i class="home-nav-icon" data-lucide="file-plus-2" aria-hidden="true">✉</i><span>Apply Online</span></a>
+            </div>
+            <a class="home-nav-portal media-nav-portal" href="/#contact" title="Contact the school about portal access">
+                <span class="home-nav-portal-icon"><i data-lucide="user-round" aria-hidden="true">●</i></span>
+                <span>Student Portal<small>Access school services</small></span>
+                <i class="home-nav-portal-arrow" data-lucide="arrow-up-right" aria-hidden="true">↗</i>
+            </a>
+            <button class="site-theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+                <i data-lucide="sun" aria-hidden="true">☼</i><span>Theme</span><span class="theme-switch" aria-hidden="true"><span></span></span>
+            </button>
+            <a class="media-nav-search home-nav-search" href="/audio#mediaSearch" aria-label="Search this page" title="Search this page"><i data-lucide="search" aria-hidden="true">⌕</i><span>Search this page</span></a>
+            <button class="site-install-button" type="button" aria-label="Install Breman Islamic Academy" title="Install app" hidden>
+                <i data-lucide="download" aria-hidden="true">↓</i><span>Install App</span>
+            </button>
+            <p class="home-nav-version">Version 1.0.0</p>
+        </nav>
+        <button class="home-nav-backdrop" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+    </header>
+
+    <main class="media-library-page">
+        <section class="catalog-hero media-library-hero">
+            <div class="media-hero-content">
+                <p class="media-breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span>Media Library</span></p>
+                <p class="eyebrow">LISTEN · LEARN · REFLECT</p>
+                <h1>Media Library</h1>
+                <p>Explore Qur'an recitations, Islamic lectures, and supplications.</p>
+            </div>
+        </section>
+
+        <section class="media-catalog-shell">
+            <div class="media-catalog-toolbar">
+                <label class="media-search">
+                    <i data-lucide="search" aria-hidden="true">⌕</i>
+                    <input id="mediaSearch" type="search" placeholder="Search reciter, track, or category" aria-label="Search the Media Library">
+                </label>
+                <span class="media-result-count" id="mediaResultCount">{{ reciters|length }} reciters</span>
+            </div>
+
+            <div class="media-category-filters" role="group" aria-label="Filter by category">
+                <button class="media-filter active" type="button" data-category="">All</button>
+                {% for category in categories %}
+                <button class="media-filter" type="button" data-category="{{ category }}">{{ category }}</button>
+                {% endfor %}
+            </div>
+
+            <div class="media-reciter-layout">
+                <div class="media-reciter-grid" id="mediaReciterGrid">
+                    {% for person in reciters %}
+                    <article class="media-reciter-card" data-name="{{ person.name|lower }}" data-category="{{ person.category|lower }}" data-search="{{ person.search_text|lower }}">
+                        <a class="media-reciter-image" href="{{ url_for('pages.media_reciter_detail', reciter_name=person.name) }}" aria-label="Browse tracks by {{ person.name }}">
+                            <img src="{{ person.image_url }}" alt="{{ person.name }}" loading="lazy">
+                            <span class="media-card-arrow" aria-hidden="true">›</span>
+                        </a>
+                        <div class="media-reciter-content">
+                            <h2><a href="{{ url_for('pages.media_reciter_detail', reciter_name=person.name) }}">{{ person.name }}</a></h2>
+                            <span class="media-category-tag">{{ person.category }}</span>
+                            <p>{{ person.tracks }} track{% if person.tracks != 1 %}s{% endif %}</p>
+                            <a class="media-view-tracks" href="{{ url_for('pages.media_reciter_detail', reciter_name=person.name) }}">View tracks <i data-lucide="arrow-right" aria-hidden="true">→</i></a>
+                        </div>
+                    </article>
+                    {% else %}
+                    <p class="media-empty-state">No reciters are available yet.</p>
+                    {% endfor %}
+                </div>
+                <aside class="media-library-note">
+                    <span class="media-note-mark" aria-hidden="true">“</span>
+                    <h2>Listen with purpose</h2>
+                    <p>Find recitations and reminders to bring knowledge and reflection into your day.</p>
+                    <span class="media-note-rule" aria-hidden="true"></span>
+                    <span class="media-note-motto">Sovereignty Belongs to Allah</span>
+                </aside>
+            </div>
+            <p class="media-empty-state" id="mediaEmpty" hidden>No results match your search.</p>
+        </section>
+    </main>
+
+    <footer class="catalog-footer">
+        <div>
+            <strong>Breman Islamic Academy (B.I.A.)</strong>
+            <p>Sovereignty Belongs to Allah</p>
+        </div>
+        <div>
+            <b>Quick Links</b>
+            <a href="/">Home</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/audio">Media Library</a>
+        </div>
+        <div>
+            <b>Contact Us</b>
+            <p>Breman Asikuma, Central Region - Ghana</p>
+            <p><a href="tel:+233241303485">+233 241 303 485</a></p>
+            <p>info@bia.edu.gh</p>
+        </div>
+        <div class="catalog-footer-copyright">
+            <span>© <span id="year"></span> Breman Islamic Academy. All rights reserved.</span>
+            <span>Version 1.0.0</span>
+        </div>
+    </footer>
+</body>
+</html>

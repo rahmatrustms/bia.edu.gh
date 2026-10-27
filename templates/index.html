@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Breman Islamic Academy — nurturing disciplined, knowledgeable and morally upright leaders.">
+    <title>Breman Islamic Academy | Home</title>
+    <meta name="theme-color" content="#075b3d">
+    <script>document.documentElement.dataset.theme = localStorage.getItem("bia-theme") || "light";</script>
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.webmanifest') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
+    <script defer src="{{ url_for('static', filename='js/site.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/track-controls.js') }}"></script>
+</head>
+<body class="home-page">
+    <header class="site-header home-header">
+        <a class="brand home-brand" href="/" aria-label="Breman Islamic Academy home">
+            <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/bia-logo-_150_x_40_px_-1_uviyf2.svg"
+                 alt="Breman Islamic Academy" class="brand-logo">
+        </a>
+
+        <button class="home-mobile-search home-search-trigger" type="button" aria-label="Search this page" aria-expanded="false" aria-controls="home-search-panel" title="Search this page">
+            <i data-lucide="search" aria-hidden="true">⌕</i>
+        </button>
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="home-navigation">
+            <i data-lucide="menu" aria-hidden="true">☰</i>
+        </button>
+
+        <nav class="main-nav home-nav" id="home-navigation" aria-label="Main navigation">
+            <div class="home-nav-heading">
+                <span>Explore B.I.A.<small>Sovereignty Belongs to Allah</small></span>
+                <button class="home-nav-close" type="button" aria-label="Close navigation"><i data-lucide="x" aria-hidden="true">×</i></button>
+            </div>
+            <div class="home-nav-links">
+                <a class="active" href="/"><i class="home-nav-icon" data-lucide="house" aria-hidden="true">⌂</i><span>Home</span></a>
+                <a href="/#about"><i class="home-nav-icon" data-lucide="book-open" aria-hidden="true">▤</i><span>About</span></a>
+                <a href="/gallery"><i class="home-nav-icon" data-lucide="images" aria-hidden="true">▧</i><span>Gallery</span></a>
+                <a href="/audio"><i class="home-nav-icon" data-lucide="headphones" aria-hidden="true">♫</i><span>Media Library</span></a>
+            </div>
+            <p class="home-nav-section-label">Student services</p>
+            <div class="home-nav-services">
+                <a href="/#contact"><i class="home-nav-icon" data-lucide="clipboard-check" aria-hidden="true">▣</i><span>Results</span></a>
+                <a href="/#contact"><i class="home-nav-icon" data-lucide="notebook-pen" aria-hidden="true">✎</i><span>Exams</span></a>
+                <a href="/#contact"><i class="home-nav-icon" data-lucide="file-plus-2" aria-hidden="true">✉</i><span>Apply Online</span></a>
+            </div>
+            <a class="home-nav-portal" href="/#contact" title="Contact the school about portal access">
+                <span class="home-nav-portal-icon">
+                    <i data-lucide="user-round" aria-hidden="true">●</i>
+                </span>
+                <span>Student Portal<small>Access school services</small></span>
+                <i class="home-nav-portal-arrow" data-lucide="arrow-up-right" aria-hidden="true">↗</i>
+            </a>
+            <button class="site-theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+                <i data-lucide="sun" aria-hidden="true">☼</i>
+                <span>Theme</span>
+                <span class="theme-switch" aria-hidden="true"><span></span></span>
+            </button>
+            <button class="home-search-trigger home-nav-search" type="button" aria-label="Search this page" aria-expanded="false" aria-controls="home-search-panel" title="Search this page">
+                <i data-lucide="search" aria-hidden="true">⌕</i>
+                <span>Search this page</span>
+                <kbd>/</kbd>
+            </button>
+            <button class="site-install-button" type="button" aria-label="Install Breman Islamic Academy" title="Install app" hidden>
+                <i data-lucide="download" aria-hidden="true">↓</i><span>Install App</span>
+            </button>
+            <p class="home-nav-version">Version 1.0.0</p>
+        </nav>
+        <button class="home-nav-backdrop" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+        <section class="home-search-panel" id="home-search-panel" aria-label="Search this page" hidden>
+            <form class="home-search-form" role="search">
+                <i data-lucide="search" aria-hidden="true">⌕</i>
+                <input id="home-search-input" type="search" autocomplete="off" placeholder="Search information on this page" aria-label="Search information on this page">
+                <button class="home-search-close" type="button" aria-label="Close search"><i data-lucide="x" aria-hidden="true">×</i></button>
+            </form>
+            <p class="home-search-hint">Search school information, announcements, audio and gallery content.</p>
+            <div class="home-search-results" id="home-search-results" aria-live="polite"></div>
+        </section>
+    </header>
+
+    <main>
+        <section class="home-hero" aria-label="Welcome to Breman Islamic Academy">
+            <div class="home-hero-slides">
+                <article class="home-hero-slide is-active" aria-hidden="false">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/48647.jpg"
+                         alt="Students learning at Breman Islamic Academy">
+                    <div class="home-hero-copy">
+                        <p class="home-eyebrow">WELCOME TO</p>
+                        <h1>Breman Islamic Academy</h1>
+                        <p class="home-hero-motto">Soverienty Belongs to Allah</p>
+                        <p class="home-hero-description">Nurturing disciplined, knowledgeable and morally upright leaders for a better tomorrow.</p>
+                        <a class="home-button" href="#about">Learn More <i data-lucide="arrow-right" aria-hidden="true">→</i></a>
+                    </div>
+                </article>
+                <article class="home-hero-slide" aria-hidden="true" hidden>
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/47782.jpg"
+                         alt="The B.I.A. school community">
+                    <div class="home-hero-copy">
+                        <p class="home-eyebrow">LEARN AND GROW TOGETHER</p>
+                        <h2>A community grounded in faith</h2>
+                        <p class="home-hero-motto">Soverienty Belongs to Allah</p>
+                        <p class="home-hero-description">Discover a supportive environment where every learner can grow with purpose.</p>
+                        <a class="home-button" href="#about">About B.I.A. <i data-lucide="arrow-right" aria-hidden="true">→</i></a>
+                    </div>
+                </article>
+                <article class="home-hero-slide" aria-hidden="true" hidden>
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/45891.jpg"
+                         alt="A moment from life at Breman Islamic Academy">
+                    <div class="home-hero-copy">
+                        <p class="home-eyebrow">MOMENTS THAT MATTER</p>
+                        <h2>Building a brighter tomorrow</h2>
+                        <p class="home-hero-motto">Soverienty Belongs to Allah</p>
+                        <p class="home-hero-description">Explore the people, learning and experiences that make up our school community.</p>
+                        <a class="home-button" href="/gallery">Visit the Gallery <i data-lucide="arrow-right" aria-hidden="true">→</i></a>
+                    </div>
+                </article>
+            </div>
+            <button class="home-hero-arrow home-hero-previous" type="button" aria-label="Show previous slide">
+                <i data-lucide="chevron-left" aria-hidden="true">‹</i>
+            </button>
+            <button class="home-hero-arrow home-hero-next" type="button" aria-label="Show next slide">
+                <i data-lucide="chevron-right" aria-hidden="true">›</i>
+            </button>
+            <div class="home-hero-dots" role="group" aria-label="Choose a welcome slide">
+                <button class="is-active" type="button" aria-label="Show slide 1" aria-pressed="true"></button>
+                <button type="button" aria-label="Show slide 2" aria-pressed="false"></button>
+                <button type="button" aria-label="Show slide 3" aria-pressed="false"></button>
+            </div>
+        </section>
+
+        <section class="home-about home-shell" id="about">
+            <div class="home-about-copy">
+                <p class="home-section-kicker">ABOUT B.I.A.</p>
+                <h2>Education rooted in knowledge and faith</h2>
+                <p>We aim to nurture confident learners with strong character, useful knowledge and a sense of responsibility to their community.</p>
+                <ul class="home-values" aria-label="Our values">
+                    <li><i data-lucide="book-open" aria-hidden="true">▤</i><span>Quality<br>Education</span></li>
+                    <li><i data-lucide="moon-star" aria-hidden="true">☾</i><span>Islamic<br>Values</span></li>
+                    <li><i data-lucide="heart-handshake" aria-hidden="true">♡</i><span>Discipline &amp;<br>Excellence</span></li>
+                    <li><i data-lucide="sunrise" aria-hidden="true">✦</i><span>Future<br>Leaders</span></li>
+                </ul>
+                <a class="home-text-button" href="#contact">Our Vision &amp; Mission <i data-lucide="arrow-right" aria-hidden="true">→</i></a>
+            </div>
+            <a class="home-about-photo" href="/gallery" aria-label="Explore the Breman Islamic Academy gallery">
+                <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/48647.jpg"
+                     alt="Students learning at Breman Islamic Academy" loading="lazy">
+                <span>Breman Islamic Academy</span>
+            </a>
+            <aside class="home-school-note">
+                <p class="home-note-quote">“Soverienty<br>Belongs to Allah”</p>
+                <p class="home-note-attribution">— B.I.A. Motto</p>
+                <ul>
+                    <li><i data-lucide="map-pin" aria-hidden="true">⌖</i><span>Breman Asikuma,<br>Central Region · Ghana</span></li>
+                    <li><i data-lucide="phone" aria-hidden="true">☎</i><a href="mailto:info@bia.edu.gh">Contact the school</a></li>
+                    <li><i data-lucide="book-open" aria-hidden="true">▤</i><span>Knowledge · Faith<br>· Excellence</span></li>
+                </ul>
+            </aside>
+        </section>
+
+        <div class="home-feature-row home-shell">
+            <section class="home-audio-section" aria-labelledby="latest-audio-title">
+                <div class="home-feature-heading">
+                    <h2 id="latest-audio-title"><i data-lucide="headphones" aria-hidden="true">♫</i> Latest Audio</h2>
+                    <a href="/audio">View All <i data-lucide="arrow-right" aria-hidden="true">→</i></a>
+                </div>
+                {% if latest_tracks %}
+                <div class="home-audio-grid">
+                    {% for track in latest_tracks %}
+                    <article class="home-audio-card" data-track-id="{{ track.id }}" data-audio-url="{{ track.audio_url }}" data-track-duration="{{ track.duration_seconds or 0 }}">
+                        <img src="{{ track.image_url or 'https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/bia-logo-_150_x_40_px_-1_uviyf2.svg' }}"
+                             alt="" loading="lazy">
+                        <div class="home-audio-info">
+                            <h3>{{ track.title }}</h3>
+                            <p>{{ track.reciter }}</p>
+                            <span class="home-audio-duration" data-duration-label>{% if track.duration_seconds > 0 %}{{ track.duration_seconds // 60 }}:{{ '%02d'|format(track.duration_seconds % 60) }}{% else %}Detecting duration…{% endif %}</span>
+                        </div>
+                        <div class="home-audio-actions">
+                            <button class="home-track-play" type="button" data-track-play aria-label="Play {{ track.title }} by {{ track.reciter }}" title="Play">
+                                <i data-lucide="play" aria-hidden="true">▶</i>
+                            </button>
+                            <a class="home-track-download" href="{{ url_for('download_audio', track_id=track.id) }}" download aria-label="Download {{ track.title }}" title="Download">
+                                <i data-lucide="download" aria-hidden="true">↓</i>
+                            </a>
+                            <span class="home-track-status" data-playback-status role="status" aria-live="polite"></span>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="home-audio-empty">New audio will appear here when it is added to the Media Library.</p>
+                {% endif %}
+            </section>
+
+            <section class="home-announcements" id="announcements" aria-labelledby="announcements-title">
+                <div class="home-feature-heading">
+                    <h2 id="announcements-title"><i data-lucide="megaphone" aria-hidden="true">◉</i> School Information</h2>
+                    <a href="#contact">Contact Us <i data-lucide="arrow-right" aria-hidden="true">→</i></a>
+                </div>
+                <ul class="home-notice-list">
+                    <li>
+                        <span class="home-notice-icon"><i data-lucide="clipboard-list" aria-hidden="true">▤</i></span>
+                        <div><h3>Examinations</h3><p>Contact the school for the current examination timetable and updates.</p></div>
+                        <i class="home-notice-arrow" data-lucide="chevron-right" aria-hidden="true">›</i>
+                    </li>
+                    <li>
+                        <span class="home-notice-icon"><i data-lucide="calendar-days" aria-hidden="true">▦</i></span>
+                        <div><h3>School events</h3><p>Visit the gallery to see moments from life in our school community.</p></div>
+                        <a class="home-notice-link" href="/gallery" aria-label="View school gallery"><i data-lucide="chevron-right" aria-hidden="true">›</i></a>
+                    </li>
+                    <li>
+                        <span class="home-notice-icon"><i data-lucide="graduation-cap" aria-hidden="true">♧</i></span>
+                        <div><h3>Admissions &amp; enquiries</h3><p>Get in touch with the school for admissions and general enquiries.</p></div>
+                        <a class="home-notice-link" href="mailto:info@bia.edu.gh" aria-label="Email the school"><i data-lucide="chevron-right" aria-hidden="true">›</i></a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <section class="home-gallery home-shell" aria-labelledby="home-gallery-title">
+            <div class="home-gallery-heading">
+                <h2 id="home-gallery-title"><i data-lucide="images" aria-hidden="true">▧</i> Photo Gallery</h2>
+                <a href="/gallery">View All <i data-lucide="arrow-right" aria-hidden="true">→</i></a>
+            </div>
+            <div class="home-gallery-grid">
+                <a href="/gallery" aria-label="View classroom learning photos" data-caption="Classroom learning"><img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/48647.jpg" alt="Classroom learning at B.I.A." loading="lazy"></a>
+                <a href="/gallery" aria-label="View school community photos" data-caption="School community"><img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/47782.jpg" alt="The B.I.A. school community" loading="lazy"></a>
+                <a href="/gallery" aria-label="View school event photos" data-caption="School events"><img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/45891.jpg" alt="A school event at B.I.A." loading="lazy"></a>
+                <a href="/gallery" aria-label="View more learning photos" data-caption="Learning together"><img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/48647.jpg" alt="Students learning together" loading="lazy"></a>
+                <a href="/gallery" aria-label="View school life photos" data-caption="School life"><img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/47782.jpg" alt="School life at B.I.A." loading="lazy"></a>
+                <a href="/gallery" aria-label="Browse all school photos" data-caption="B.I.A. memories"><img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/f_auto,q_auto/45891.jpg" alt="Memories from Breman Islamic Academy" loading="lazy"></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="home-footer" id="contact">
+        <div class="home-footer-main home-shell">
+            <div class="home-footer-brand">
+                <a href="/" aria-label="Breman Islamic Academy home">
+                    <img src="https://res.cloudinary.com/rahmatrust-m-s/image/upload/q_auto/f_auto/bia-logo_1001_x_295_px._hzlfjd.svg" alt="Breman Islamic Academy">
+                </a>
+                <p>Sovereignty Belongs to Allah</p>
+            </div>
+            <div>
+                <h2>Quick Links</h2>
+                <a href="/">Home</a><a href="/gallery">Gallery</a><a href="/audio">Media Library</a>
+            </div>
+            <div>
+                <h2>Contact Us</h2>
+                <p><i data-lucide="map-pin" aria-hidden="true">⌖</i> Breman Asikuma, Central Region - Ghana</p>
+                <a href="tel:+233241303485">+233 241 303 485</a>
+                <a href="mailto:info@bia.edu.gh">info@bia.edu.gh</a>
+            </div>
+        </div>
+        <div class="home-footer-bottom home-shell">
+            <span>© <span id="year"></span> Breman Islamic Academy. All rights reserved.</span>
+            <span>Sovereignty Belongs to Allah</span>
+            <span>Version 1.0.0</span>
+        </div>
+    </footer>
+</body>
+</html>
